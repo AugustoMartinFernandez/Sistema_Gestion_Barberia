@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SistemaBarberia" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SistemaBarberia" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include/utilidades" />
+					<Add directory="include/entidades" />
+					<Add directory="include/interfaz" />
+					<Add directory="include/persistencia" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SistemaBarberia" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include/utilidades" />
+					<Add directory="include/entidades" />
+					<Add directory="include/interfaz" />
+					<Add directory="include/persistencia" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="C:/Users/mff06/Desktop/TP_Barberia/SistemaBarberia/include" />
+		</Compiler>
+		<Unit filename="include/entidades/Persona.h" />
+		<Unit filename="include/utilidades/Fecha.h" />
+		<Unit filename="include/utilidades/Hora.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/entidades/Persona.cpp" />
+		<Unit filename="src/utilidades/Fecha.cpp" />
+		<Unit filename="src/utilidades/Hora.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

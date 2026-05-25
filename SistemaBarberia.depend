@@ -1,0 +1,111 @@
+# depslib dependency file v1.0
+1778082797 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\entidades\persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1777995715 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\entidades\persona.h
+	<cstring>
+
+1778082825 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\utilidades\fecha.cpp
+	"Fecha.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1777995235 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\utilidades\fecha.h
+	<string>
+
+1777995428 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\utilidades\hora.cpp
+	"Hora.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1777995430 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\utilidades\hora.h
+	<string>
+
+1777996757 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\main.cpp
+	"interfaz/MenuPrincipal.h"
+
+1778079453 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\interfaz\menuprincipal.h
+
+1777996033 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\entidades\cliente.cpp
+	"entidades/Cliente.h"
+
+1778082748 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\entidades\cliente.h
+	"Persona.h"
+
+1778082686 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\interfaz\menuprincipal.cpp
+	"interfaz/MenuPrincipal.h"
+	"interfaz/MenuBase.h"
+	"interfaz/MenuClientes.h"
+	"utilidades/Fecha.h"
+	"utilidades/Hora.h"
+	<iostream>
+
+1777996250 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\entidades\barbero.h
+	"Persona.h"
+
+1778082770 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\entidades\barbero.cpp
+	"entidades/Barbero.h"
+	<iostream>
+	<cstring>
+
+1778077780 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\persistencia\archivoclientes.h
+	"entidades/Cliente.h"
+
+1778077495 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\persistencia\archivoclientes.cpp
+	"persistencia/ArchivoClientes.h"
+	<cstdio>
+	<cstring>
+
+1778331054 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\interfaz\menuclientes.cpp
+	"interfaz/MenuClientes.h"
+	"persistencia/ArchivoClientes.h"
+	<iostream>
+
+1778078862 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\interfaz\menuclientes.h
+	"interfaz/MenuBase.h"
+
+1778079683 c:\users\mff06\desktop\tp_barberia\sistemabarberia\include\interfaz\menubase.h
+
+1778082712 source:c:\users\mff06\desktop\tp_barberia\sistemabarberia\src\interfaz\menubase.cpp
+	"interfaz/MenuBase.h"
+
+1778082825 source:c:\users\mff06\downloads\sistemabarberia\src\utilidades\fecha.cpp
+	"Fecha.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1777995235 c:\users\mff06\downloads\sistemabarberia\include\utilidades\fecha.h
+	<string>
+
+1777995428 source:c:\users\mff06\downloads\sistemabarberia\src\utilidades\hora.cpp
+	"Hora.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1777995430 c:\users\mff06\downloads\sistemabarberia\include\utilidades\hora.h
+	<string>
+
+1779725676 source:c:\users\mff06\downloads\sistemabarberia\src\entidades\persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1779724721 c:\users\mff06\downloads\sistemabarberia\include\entidades\persona.h
+	<cstring>
+
+1779725506 source:c:\users\mff06\downloads\sistemabarberia\main.cpp
+	<iostream>
+	"entidades/Persona.h"
+	"utilidades/Fecha.h"
+	"utilidades/Hora.h"
+
