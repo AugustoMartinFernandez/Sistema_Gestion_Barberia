@@ -109,3 +109,37 @@
 	"utilidades/Fecha.h"
 	"utilidades/Hora.h"
 
+1779833901 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\entidades\persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1779833901 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\entidades\persona.h
+	<cstring>
+
+1779833901 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\utilidades\fecha.cpp
+	"Fecha.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1779833901 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\utilidades\fecha.h
+	<string>
+
+1779833901 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\utilidades\hora.cpp
+	"Hora.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1779833901 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\utilidades\hora.h
+	<string>
+
+1780063567 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\main.cpp
+	<iostream>
+	"Persona.h"
+	"Fecha.h"
+	"Hora.h"
+

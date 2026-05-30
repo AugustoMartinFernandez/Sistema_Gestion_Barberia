@@ -1,7 +1,7 @@
 #include <iostream>
-#include "entidades/Persona.h"
-#include "utilidades/Fecha.h"
-#include "utilidades/Hora.h"
+#include "Persona.h"
+#include "Fecha.h"
+#include "Hora.h"
 using namespace std;
 
 int main() {
