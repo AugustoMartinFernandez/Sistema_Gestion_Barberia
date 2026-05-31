@@ -137,8 +137,21 @@
 1779833901 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\utilidades\hora.h
 	<string>
 
-1780063567 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\main.cpp
+1780263139 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\main.cpp
 	<iostream>
+	"Persona.h"
+	"Fecha.h"
+	"Hora.h"
+	"MenuManager.h"
+
+1780266419 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\interfaz\menumanager.h
+	"Persona.h"
+	"Fecha.h"
+	"Hora.h"
+
+1780264398 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\interfaz\menumanager.cpp
+	<iostream>
+	"MenuManager.h"
 	"Persona.h"
 	"Fecha.h"
 	"Hora.h"

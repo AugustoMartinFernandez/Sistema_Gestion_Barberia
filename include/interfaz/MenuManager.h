@@ -2,19 +2,20 @@
 #include "Persona.h"
 #include "Fecha.h"
 #include "Hora.h"
-
+using namespace std;
 
 class MenuManager {
-private:
- void MenuPrincipal();
- void MenuCliente() ;
- void MenuBarberos();
- void MenuTurnos();
- void MuestroInformes();
-
 public:
 
- void MenuPrincipal();
+ void MenuCliente() const;
+ void MenuBarberos()const;
+ void MenuTurnos()const;
 
+ void MuestroInformes()const;
+ void SubMenuInfFinancieros()const;
+ void SubMenuInfGestionClientes () const;
+
+//
+void MenuPrincipal () const;
 
 };
