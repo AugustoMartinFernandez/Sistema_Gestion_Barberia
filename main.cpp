@@ -2,10 +2,17 @@
 #include "Persona.h"
 #include "Fecha.h"
 #include "Hora.h"
+#include "MenuManager.h"
 using namespace std;
 
 int main() {
-    Fecha fecha;
+
+    MenuManager menu;
+
+   menu.MenuPrincipal();
+
+
+  /*  Fecha fecha;
     Hora hora;
     Persona persona;
 
@@ -17,5 +24,9 @@ int main() {
     persona.cargar();
     cout << endl;
     persona.mostrar();
+
+    */
+
     return 0;
+
 }
