@@ -41,11 +41,15 @@
 			<Add option="-fexceptions" />
 			<Add directory="C:/Users/mff06/Desktop/TP_Barberia/SistemaBarberia/include" />
 		</Compiler>
+		<Unit filename="include/entidades/ArchivoClientes.h" />
+		<Unit filename="include/entidades/Cliente.h" />
 		<Unit filename="include/entidades/Persona.h" />
 		<Unit filename="include/interfaz/MenuManager.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
 		<Unit filename="include/utilidades/Hora.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/entidades/ArchivoClientes.cpp" />
+		<Unit filename="src/entidades/Cliente.cpp" />
 		<Unit filename="src/entidades/Persona.cpp" />
 		<Unit filename="src/interfaz/MenuManager.cpp" />
 		<Unit filename="src/utilidades/Fecha.cpp" />

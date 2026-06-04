@@ -156,3 +156,80 @@
 	"Fecha.h"
 	"Hora.h"
 
+1780609555 source:c:\users\mff06\desktop\sistema_gestion_barberia\main.cpp
+	<iostream>
+	"MenuManager.h"
+
+1780360839 c:\users\mff06\desktop\sistema_gestion_barberia\include\entidades\persona.h
+	<cstring>
+
+1780328736 c:\users\mff06\desktop\sistema_gestion_barberia\include\utilidades\fecha.h
+	<string>
+
+1780328736 c:\users\mff06\desktop\sistema_gestion_barberia\include\utilidades\hora.h
+	<string>
+
+1780328736 c:\users\mff06\desktop\sistema_gestion_barberia\include\interfaz\menumanager.h
+	"Persona.h"
+	"Fecha.h"
+	"Hora.h"
+
+1780328736 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\utilidades\fecha.cpp
+	"Fecha.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1780328736 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\utilidades\hora.cpp
+	"Hora.h"
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+
+1780451227 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\entidades\cliente.cpp
+	"Cliente.h"
+	<iostream>
+
+1780362034 c:\users\mff06\desktop\sistema_gestion_barberia\include\entidades\cliente.h
+	"Persona.h"
+
+1780360821 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\entidades\persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1780366003 c:\users\mff06\desktop\sistema_gestion_barberia\include\entidades\archivoclientes.h
+	<string>
+	"Cliente.h"
+
+1780609486 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\interfaz\menumanager.cpp
+	<iostream>
+	"MenuManager.h"
+	"Fecha.h"
+	"Hora.h"
+	"Cliente.h"
+	"ArchivoConfiguracion.h"
+	"ArchivoClientes.h"
+
+1780452509 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\entidades\archivoclientes.cpp
+	"ArchivoClientes.h"
+	<cstdio>
+
+1780606471 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\entidades\barbero.cpp
+	<iostream>
+	<cstring>
+	"Persona.h"
+	"Barbero.h"
+
+1780606536 c:\users\mff06\desktop\sistema_gestion_barberia\include\entidades\barbero.h
+	"Persona.h"
+
+1780609208 c:\users\mff06\desktop\sistema_gestion_barberia\include\utilidades\archivoconfiguracion.h
+	<string>
+
+1780609236 source:c:\users\mff06\desktop\sistema_gestion_barberia\src\utilidades\archivoconfiguracion.cpp
+	"ArchivoConfiguracion.h"
+	<cstdio>
+
