@@ -11,6 +11,8 @@ int main() {
 
    menu.MenuPrincipal();
 
+   // terminar de configurar los menus (dise¤o )
+
 
   /*  Fecha fecha;
     Hora hora;

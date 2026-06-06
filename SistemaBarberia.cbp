@@ -43,6 +43,8 @@
 		</Compiler>
 		<Unit filename="include/entidades/Persona.h" />
 		<Unit filename="include/interfaz/MenuManager.h" />
+		<Unit filename="include/interfaz/facha.h" />
+		<Unit filename="include/interfaz/rlutil.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
 		<Unit filename="include/utilidades/Hora.h" />
 		<Unit filename="main.cpp" />
