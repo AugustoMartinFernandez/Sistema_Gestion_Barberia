@@ -97,6 +97,7 @@ void MenuManager::MenuCliente()const{
                 cli.setId(nuevoId);
 
                 ArchivoClientes reg;
+
                 if(reg.guardar(cli)){
                     cout << "\n[EXITO] Cliente guardado correctamente con el ID: " << nuevoId << endl;
                 } else {

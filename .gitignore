@@ -1,0 +1,34 @@
+# Directorios de compilación
+/bin/
+/obj/
+
+# Archivos de configuración del IDE
+*.layout
+*.depend
+*.cbp.layout
+
+# Archivos compilados
+*.exe
+*.o
+*.a
+*.lib
+*.so
+*.dll
+
+# Archivos temporales del IDE
+*.layout.bak
+*.depend.bak
+
+# Carpetas de IDE
+.vscode/
+.idea/
+*.vs/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Otros archivos temporales
+*.swp
+*.swo
+*~
