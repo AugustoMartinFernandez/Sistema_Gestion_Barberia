@@ -67,37 +67,61 @@ void Turno::cargar(){
 
     cout << "ID Cliente: ";
     cin >> _idCliente;
+    while(_idCliente <= 0) {
+        cout << "ID Invalido. Intente nuevamente: ";
+        cin >> _idCliente;
+    }
 
     cout << "ID Barbero: ";
     cin >> _idBarbero;
+    while(_idBarbero <= 0) {
+        cout << "ID Invalido. Intente nuevamente: ";
+        cin >> _idBarbero;
+    }
 
     cout << "ID Servicio: ";
     cin >> _idServicio;
+    while(_idServicio <= 0) {
+        cout << "ID Invalido. Intente nuevamente: ";
+        cin >> _idServicio;
+    }
 
-    cout << "Dia: ";
-    cin >> dia;
+    do {
+        cout << "Dia: ";
+        cin >> dia;
+        cout << "Mes: ";
+        cin >> mes;
+        cout << "Anio: ";
+        cin >> anio;
 
-    cout << "Mes: ";
-    cin >> mes;
+        _fecha.setDia(dia);
+        _fecha.setMes(mes);
+        _fecha.setAnio(anio);
 
-    cout << "Anio: ";
-    cin >> anio;
+        if(_fecha.esValida() == false){
+            cout << "Fecha Invalida. Intente nuevamente." << endl;
+        }
+    } while(_fecha.esValida() == false);
 
-    _fecha.setDia(dia);
-    _fecha.setMes(mes);
-    _fecha.setAnio(anio);
+    do {
+        cout << "Hora: ";
+        cin >> hora;
+        cout << "Minutos: ";
+        cin >> minuto;
 
-    cout << "Hora: ";
-    cin >> hora;
+        _hora.setHora(hora);
+        _hora.setMinuto(minuto);
+        _hora.setSegundo(0);
 
-    cout << "Minutos: ";
-    cin >> minuto;
+        if(_hora.esValida() == false){
+             cout << "Hora Invalida. Intente nuevamente." << endl;
+        }
+    } while (_hora.esValida() == false);
 
-    _hora.setHora(hora);
-    _hora.setMinuto(minuto);
-    _hora.setSegundo(0);
-
+    // Si todo sale ok, asignamos al Turno como activo.
     _activo = true;
+    // Agregamos esto para limpiar lo que ingresamos durante la carga
+    cin.ignore();
 }
 
 void Turno::mostrar() const{

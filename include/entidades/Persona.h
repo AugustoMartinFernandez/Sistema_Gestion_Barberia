@@ -13,6 +13,7 @@ protected:
 
 public:
     Persona();
+    virtual ~Persona(); // Destructor virtual
 
     // Setters
     void setId(int id);

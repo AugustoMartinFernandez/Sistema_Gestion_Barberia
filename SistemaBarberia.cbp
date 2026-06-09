@@ -45,6 +45,7 @@
 		<Unit filename="include/entidades/Barbero.h" />
 		<Unit filename="include/entidades/Cliente.h" />
 		<Unit filename="include/entidades/Persona.h" />
+		<Unit filename="include/entidades/Turno.h" />
 		<Unit filename="include/interfaz/MenuManager.h" />
 		<Unit filename="include/utilidades/ArchivoConfiguracion.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
@@ -54,6 +55,7 @@
 		<Unit filename="src/entidades/Barbero.cpp" />
 		<Unit filename="src/entidades/Cliente.cpp" />
 		<Unit filename="src/entidades/Persona.cpp" />
+		<Unit filename="src/entidades/Turno.cpp" />
 		<Unit filename="src/interfaz/MenuManager.cpp" />
 		<Unit filename="src/utilidades/ArchivoConfiguracion.cpp" />
 		<Unit filename="src/utilidades/Fecha.cpp" />
