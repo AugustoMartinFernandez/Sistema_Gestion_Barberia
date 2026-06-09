@@ -13,7 +13,7 @@ void MenuManager::LogoPorDefecto ()const {
 Fecha fecha;
 Hora hora;
 
-rlutil::setColor(rlutil::BLUE);
+rlutil::setColor(rlutil::YELLOW);
  //rlutil::locate(12, 5); cout <<"-------------------------------"<<endl;
  //rlutil::locate(48, 5); cout <<"-------------------------------"<<endl;
  rlutil::locate(27, 3);   cout<< "ษอออออออออออออออออออออออออออออออออออออออป";
@@ -66,6 +66,7 @@ cout<< R"(
     system("cls"); // limpia pantalla ;
 }
 
+
 void MenuManager::MenuPrincipal () const {
  system("cls"); // limpia pantalla ;
   Fecha fecha;
@@ -79,25 +80,76 @@ void MenuManager::MenuPrincipal () const {
 
   do {
    LogoPorDefecto ();
+  rlutil::setColor(rlutil::RED);
+   rlutil::setColor(rlutil::WHITE);
+  rlutil::setColor(rlutil::BLUE);
 
+rlutil::setColor(rlutil::RED); rlutil::locate(35, 12); cout<< "Menu Princial";
+ // rlutil::setColor(rlutil::WHITE); rlutil::locate(12, 13) ; cout <<"---------------------------"<<endl;
+ // rlutil::setColor(rlutil::WHITE); rlutil::locate(48, 13) ; cout <<"---------------------------"<<endl;
+rlutil::setColor(rlutil::WHITE);
+
+
+ rlutil::locate(16, 13);   cout << "  ÛÜ ÜÛ   ";
+rlutil::locate(16, 14);      cout << "  Û Û Û               ";
+rlutil::locate(16, 15);      cout << "                  ";
+rlutil::locate(16, 16);      cout << "  ÛÛÛÛÛ              "<< endl;
+rlutil::locate(16, 17);       cout << "  Û ÜÜ               "<< endl;
+rlutil::locate(16, 18);     cout<<"  Û                                ";
+rlutil::locate(16, 19);    cout << "  ÛÛÛÛÛ                            " << endl;
+rlutil::locate(16, 20);       cout << "                                   " << endl;
+rlutil::locate(16, 21);    cout << "  ÛÛ Û                             " << endl;
+rlutil::locate(16, 22);       cout << "  Û ÛÛ                             " << endl;
+rlutil::locate(16, 23);    cout << "                                   " << endl;
+rlutil::locate(16, 24);    cout << "  Û   Û                            " << endl;
+rlutil::locate(16, 25);       cout << "  ÛÛÛÛÛ                            "<<endl;
+rlutil::locate(16, 26);
+
+ /*   cout << "  ÛÜ ÜÛ   ";
+    cout << "  Û Û Û               ";
+    cout << "                  "<< endl;
+    cout << "  ÛÛÛÛÛ              "<< endl;
+    cout << "  Û ÜÜ               "<< endl;
+     cout<<"   Û                                ";
+    cout << "  ÛÛÛÛÛ                            " << endl;
+    cout << "                                   " << endl;
+    cout << "  ÛÛ Û                             " << endl; //
+    cout << "  Û ÛÛ                             " << endl; //
+    cout << "                                   " << endl;
+    cout << "  Û   Û                            " << endl;
+    cout << "  ÛÛÛÛÛ                            "<<endl;
+*/
+
+ rlutil::locate(27, 13);   cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
+rlutil::locate(27, 14);    cout<< "บ                                                    บ";
+rlutil::locate(27, 15);    cout<< "บ                                                    บ";
+rlutil::locate(27, 16);    cout<< "บ                                                    บ";
+rlutil::locate(27, 17);    cout<< "บ                                                    บ";
+rlutil::locate(27, 18);    cout<< "บ                                                    บ";
+rlutil::locate(27, 19);    cout<< "บ                                                    บ";
+rlutil::locate(27, 20);    cout<< "บ                                                    บ";
+rlutil::locate(27, 21);    cout<< "บ                                                    บ";
+rlutil::locate(27, 22);    cout<< "บ                                                    บ";
+rlutil::locate(27, 23);    cout<< "บ                                                    บ";
+rlutil::locate(27, 24);    cout<< "บ                                                    บ";
+rlutil::locate(27, 25);    cout<< "บ                                                    บ";
+rlutil::locate(27, 26);   cout<<  "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+
+rlutil::setColor(rlutil::BLUE);
+rlutil::locate(32, 15);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;
+rlutil::setColor(rlutil::RED);
+rlutil::locate(32, 18);cout << "[ 2 ] Acceder al menu  Para clientes"<<endl;
+ rlutil::setColor(rlutil::WHITE);
+rlutil::locate(32, 21);cout << "[ 3 ] Acceder al menu Barberos  "<<endl;
+ rlutil::setColor(rlutil::BLUE);
+rlutil::locate(32, 24);cout << "[ 4 ] Informes..."<<endl<<endl;
+rlutil::setColor(rlutil::RED);
+//rlutil::locate(12, 27);cout <<"---------------------------"<<endl;
+//rlutil::locate(48, 27);cout <<"---------------------------"<<endl;
 
 rlutil::setColor(rlutil::RED);
-  rlutil::locate(12, 13) ; cout <<"-------------------------------"<<endl;
-  rlutil::locate(48, 13) ; cout <<"-------------------------------"<<endl;
-
-rlutil::locate(32, 15);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;
-
-rlutil::locate(32, 18);cout << "[ 2 ] Acceder al menu  Para clientes"<<endl;
-
-rlutil::locate(32, 21);cout << "[ 3 ] Acceder al menu Barberos  "<<endl;
-
-rlutil::locate(32, 24);cout << "[ 4 ] Informes..."<<endl<<endl;
-rlutil::locate(12, 27);cout <<"-------------------------------"<<endl;
-rlutil::locate(48, 27);cout <<"-------------------------------"<<endl;
-
-rlutil::setColor(rlutil::WHITE);
- rlutil::locate(32, 29);cout<< "Elegir una opcion,  0 (cero)  para salir"<<endl;
- rlutil::locate(32, 31); cout<< "Opcion: # ";  //cin>>opcion;
+ rlutil::locate(32, 27);cout<< "Elegir una opcion,  0 (cero)  para salir"<<endl;
+ rlutil::setColor(rlutil::WHITE);  rlutil::locate(32, 28); cout<< "Opcion: # ";
   rlutil::setColor(rlutil::BLUE);cin>>opcion;
 
 
