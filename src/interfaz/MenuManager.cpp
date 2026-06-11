@@ -14,8 +14,6 @@ Fecha fecha;
 Hora hora;
 
 rlutil::setColor(rlutil::YELLOW);
- //rlutil::locate(12, 5); cout <<"-------------------------------"<<endl;
- //rlutil::locate(48, 5); cout <<"-------------------------------"<<endl;
  rlutil::locate(27, 3);   cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
 rlutil::locate(27, 4);    cout<< "º                                       º";
 rlutil::locate(27, 5);    cout<< "º                                       º";
@@ -85,40 +83,27 @@ void MenuManager::MenuPrincipal () const {
   rlutil::setColor(rlutil::BLUE);
 
 rlutil::setColor(rlutil::RED); rlutil::locate(35, 12); cout<< "Menu Princial";
- // rlutil::setColor(rlutil::WHITE); rlutil::locate(12, 13) ; cout <<"---------------------------"<<endl;
- // rlutil::setColor(rlutil::WHITE); rlutil::locate(48, 13) ; cout <<"---------------------------"<<endl;
+
 rlutil::setColor(rlutil::WHITE);
 
 
- rlutil::locate(16, 13);   cout << "  ÛÜ ÜÛ   ";
-rlutil::locate(16, 14);      cout << "  Û Û Û               ";
-rlutil::locate(16, 15);      cout << "                  ";
-rlutil::locate(16, 16);      cout << "  ÛÛÛÛÛ              "<< endl;
-rlutil::locate(16, 17);       cout << "  Û ÜÜ               "<< endl;
-rlutil::locate(16, 18);     cout<<"  Û                                ";
-rlutil::locate(16, 19);    cout << "  ÛÛÛÛÛ                            " << endl;
-rlutil::locate(16, 20);       cout << "                                   " << endl;
-rlutil::locate(16, 21);    cout << "  ÛÛ Û                             " << endl;
-rlutil::locate(16, 22);       cout << "  Û ÛÛ                             " << endl;
-rlutil::locate(16, 23);    cout << "                                   " << endl;
-rlutil::locate(16, 24);    cout << "  Û   Û                            " << endl;
-rlutil::locate(16, 25);       cout << "  ÛÛÛÛÛ                            "<<endl;
+ rlutil::locate(16, 13);      cout << "ÛÜ ÜÛ";
+rlutil::locate(16, 14);       cout << "Û Û Û ";
+rlutil::locate(16, 15);       cout << "          ";
+rlutil::locate(16, 16);       cout << "ÛÛÛÛÛ";
+rlutil::locate(16, 17);       cout << "Û ÜÜ";
+rlutil::locate(16, 18);       cout << "Û ";
+rlutil::locate(16, 19);       cout << "ÛÛÛÛÛ";
+rlutil::locate(16, 20);       cout << "        " ;
+rlutil::locate(16, 21);       cout << "ÛÛ Û";
+rlutil::locate(16, 22);       cout << "Û ÛÛ ";
+rlutil::locate(16, 23);       cout << "            ";
+rlutil::locate(16, 24);       cout << "Û   Û";
+rlutil::locate(16, 25);       cout << "ÛÛÛÛÛ ";
 rlutil::locate(16, 26);
 
- /*   cout << "  ÛÜ ÜÛ   ";
-    cout << "  Û Û Û               ";
-    cout << "                  "<< endl;
-    cout << "  ÛÛÛÛÛ              "<< endl;
-    cout << "  Û ÜÜ               "<< endl;
-     cout<<"   Û                                ";
-    cout << "  ÛÛÛÛÛ                            " << endl;
-    cout << "                                   " << endl;
-    cout << "  ÛÛ Û                             " << endl; //
-    cout << "  Û ÛÛ                             " << endl; //
-    cout << "                                   " << endl;
-    cout << "  Û   Û                            " << endl;
-    cout << "  ÛÛÛÛÛ                            "<<endl;
-*/
+
+
 
  rlutil::locate(27, 13);   cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
 rlutil::locate(27, 14);    cout<< "º                                                    º";

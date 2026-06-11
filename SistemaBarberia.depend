@@ -109,12 +109,12 @@
 	"utilidades/Fecha.h"
 	"utilidades/Hora.h"
 
-1779833901 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\entidades\persona.cpp
+1781044704 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\entidades\persona.cpp
 	"Persona.h"
 	<iostream>
 	<cstring>
 
-1779833901 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\entidades\persona.h
+1781044704 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\entidades\persona.h
 	<cstring>
 
 1779833901 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\utilidades\fecha.cpp
@@ -137,19 +137,19 @@
 1779833901 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\utilidades\hora.h
 	<string>
 
-1780774830 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\main.cpp
+1781044704 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\main.cpp
 	<iostream>
 	"Persona.h"
 	"Fecha.h"
 	"Hora.h"
 	"MenuManager.h"
 
-1780774342 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\interfaz\menumanager.h
+1781044704 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\interfaz\menumanager.h
 	"Persona.h"
 	"Fecha.h"
 	"Hora.h"
 
-1780963632 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\interfaz\menumanager.cpp
+1781044704 source:c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\src\interfaz\menumanager.cpp
 	<iostream>
 	"MenuManager.h"
 	"Persona.h"
@@ -157,7 +157,7 @@
 	"Hora.h"
 	"facha.h"
 
-1780705364 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\interfaz\facha.h
+1781044704 c:\users\estudiante\desktop\carrera - programacion\carpeta de  integrador prog ii\sistema_gestion_barberia\include\interfaz\facha.h
 	<iostream>
 	<string>
 	<cstdio>
