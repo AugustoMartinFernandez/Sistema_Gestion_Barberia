@@ -5,6 +5,7 @@
 #include "Cliente.h"
 #include "ArchivoConfiguracion.h"
 #include "ArchivoClientes.h"
+#include "Funciones.h"
 using namespace std;
 
 void MenuManager::MenuPrincipal () const
@@ -400,16 +401,13 @@ void MenuManager::MenuBarberos()const
     Fecha fecha;
     Hora hora;
     int opcion;
-
+  do {
     cout <<"-------------------------------"<<endl;
     cout << "=== Barberia Pacheco ==="<<endl;
     cout << "--- Fecha: " <<fecha.toString()<<endl;
     cout << "--- Hora: " <<hora.toString()<<endl;
     cout <<endl;
     cout <<"-------------------------------"<<endl;
-
-    // do {
-
     cout<<"1- ¨Sos un Barbero nuevo? "<<endl;
     cout<<"2- Editar Informacion de Barbero. "<<endl;
     cout<<"3- Borrar Informacion. "<<endl;
@@ -419,18 +417,20 @@ void MenuManager::MenuBarberos()const
     cout << " al menu principal"<<endl;
     cout << "Opcion: # ";
     cin>> opcion;
-    /*
+
     switch (opcion){
-     case 1: // barb.CrearBarbero (); break; // Agregar funcion crear barbero
-      case 2:
-      case 3:
-     case 4:
+     case 1:  agregarBarbero(); break; // Agregar funcion crear barbero
+     case 2:break;
+     case 3:break;
+     case 4:break;
     }
+    system ("pause");
+    system("cls");
 
     } while ( opcion != 0);
       }
-      */
-}
+
+
 
 void MenuManager::MenuTurnos()const
 {
