@@ -15,14 +15,14 @@ Fecha fecha;
 Hora hora;
 
 rlutil::setColor(rlutil::YELLOW);
- rlutil::locate(27, 3);   cout<< "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»";
-rlutil::locate(27, 4);    cout<< "ï¿½                                       ï¿½";
-rlutil::locate(27, 5);    cout<< "ï¿½                                       ï¿½";
-rlutil::locate(27, 6);    cout<< "ï¿½                                       ï¿½";
-rlutil::locate(27, 7);    cout<< "ï¿½                                       ï¿½";
-rlutil::locate(27, 8);    cout<< "ï¿½                                       ï¿½";
-rlutil::locate(27, 9);    cout<< "ï¿½                                       ï¿½";
-rlutil::locate(27, 10);   cout<< "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼";
+ rlutil::locate(27, 3);   cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
+rlutil::locate(27, 4);    cout<< "º                                       º";
+rlutil::locate(27, 5);    cout<< "º                                       º";
+rlutil::locate(27, 6);    cout<< "º                                       º";
+rlutil::locate(27, 7);    cout<< "º                                       º";
+rlutil::locate(27, 8);    cout<< "º                                       º";
+rlutil::locate(27, 9);    cout<< "º                                       º";
+rlutil::locate(27, 10);   cout<< "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
 
   rlutil::locate(32, 4);   cout << "=== Barberia Pacheco ==="<<endl;
     rlutil::locate(32, 6); cout << "--- Fecha: " <<fecha.toString()<<endl;
@@ -34,19 +34,19 @@ void MenuManager::MuestroLogo ()const {
 cout<< R"(
     ===================================================================================
 
-  ï¿½ï¿½ï¿½ï¿½ï¿½Û»  ï¿½ï¿½ï¿½ï¿½Û» ï¿½ï¿½ï¿½ï¿½ï¿½Û» ï¿½ï¿½ï¿½ï¿½ï¿½Û» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½Û» ï¿½Û» ï¿½ï¿½ï¿½ï¿½Û»
-  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»
-  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½Û»  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûº
-  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½Í¼  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûº
-  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½Ûº  ï¿½Ûºï¿½Ûº  ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½Ûº  ï¿½Ûºï¿½Ûºï¿½Ûº  ï¿½Ûº
-  ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ ï¿½Í¼  ï¿½Í¼ï¿½Í¼  ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Í¼  ï¿½Í¼ï¿½Í¼ï¿½Í¼  ï¿½Í¼
+  ÛÛÛÛÛÛ»  ÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛÛ»ÛÛÛÛÛÛ» ÛÛ» ÛÛÛÛÛ»
+  ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÍÍ¼ÛÛÉÍÍÛÛ»ÛÛºÛÛÉÍÍÛÛ»
+  ÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛºÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÉ¼ÛÛÛÛÛ»  ÛÛÛÛÛÛÉ¼ÛÛºÛÛÛÛÛÛÛº
+  ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛºÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍ¼  ÛÛÉÍÍÛÛ»ÛÛºÛÛÉÍÍÛÛº
+  ÛÛÛÛÛÛÉ¼ÛÛº  ÛÛºÛÛº  ÛÛºÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛ»ÛÛº  ÛÛºÛÛºÛÛº  ÛÛº
+  ÈÍÍÍÍÍ¼ ÈÍ¼  ÈÍ¼ÈÍ¼  ÈÍ¼ÈÍÍÍÍÍ¼ ÈÍÍÍÍÍÍ¼ÈÍ¼  ÈÍ¼ÈÍ¼ÈÍ¼  ÈÍ¼
 
-          ï¿½ï¿½ï¿½ï¿½ï¿½Û»  ï¿½ï¿½ï¿½ï¿½Û»  ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½Û»  ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û» ï¿½ï¿½ï¿½ï¿½ï¿½Û» ï¿½ï¿½ï¿½ï¿½ï¿½Û»
-          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ûº  ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»
-          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½Ûº     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ï¿½Û»  ï¿½Ûº     ï¿½Ûº   ï¿½Ûº
-          ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½Ûº     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ï¿½Í¼  ï¿½Ûº     ï¿½Ûº   ï¿½Ûº
-          ï¿½Ûº     ï¿½Ûº  ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½Ûº  ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼
-          ï¿½Í¼     ï¿½Í¼  ï¿½Í¼ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Í¼  ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
+          ÛÛÛÛÛÛ»  ÛÛÛÛÛ»  ÛÛÛÛÛÛ»ÛÛ»  ÛÛ»ÛÛÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛ»
+          ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÍÍ¼ÛÛº  ÛÛºÛÛÉÍÍÍÍ¼ÛÛÉÍÍÍÍ¼ÛÛÉÍÍÍÛÛ»
+          ÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛºÛÛº     ÛÛÛÛÛÛÛºÛÛÛÛÛ»  ÛÛº     ÛÛº   ÛÛº
+          ÛÛÉÍÍÍ¼ ÛÛÉÍÍÛÛºÛÛº     ÛÛÉÍÍÛÛºÛÛÉÍÍ¼  ÛÛº     ÛÛº   ÛÛº
+          ÛÛº     ÛÛº  ÛÛºÈÛÛÛÛÛÛ»ÛÛº  ÛÛºÛÛÛÛÛÛÛ»ÈÛÛÛÛÛÛ»ÈÛÛÛÛÛÛÉ¼
+          ÈÍ¼     ÈÍ¼  ÈÍ¼ ÈÍÍÍÍÍ¼ÈÍ¼  ÈÍ¼ÈÍÍÍÍÍÍ¼ ÈÍÍÍÍÍ¼ ÈÍÍÍÍÍ¼
 
                                      _        _
                                     \ \     / /
@@ -65,10 +65,9 @@ cout<< R"(
     system("cls"); // limpia pantalla ;
 }
 
-
 void MenuManager::MenuPrincipal () const {
- 
-  
+
+
   int opcion;
 
   rlutil::setColor(rlutil::YELLOW);  /// cAmbia el color del logo / editar dps.  .
@@ -77,7 +76,7 @@ void MenuManager::MenuPrincipal () const {
 
 
   do {
-    system("cls"); // limpia pantalla ;
+        system("cls"); // limpia pantalla ;
    LogoPorDefecto ();
   rlutil::setColor(rlutil::RED);
    rlutil::setColor(rlutil::WHITE);
@@ -88,38 +87,38 @@ rlutil::setColor(rlutil::RED); rlutil::locate(35, 12); cout<< "Menu Princial";
 rlutil::setColor(rlutil::WHITE);
 
 
- rlutil::locate(16, 13);      cout << "ï¿½ï¿½ ï¿½ï¿½";
-rlutil::locate(16, 14);       cout << "ï¿½ ï¿½ ï¿½ ";
+ rlutil::locate(16, 13);      cout << "ÛÜ ÜÛ";
+rlutil::locate(16, 14);       cout << "Û Û Û ";
 rlutil::locate(16, 15);       cout << "          ";
-rlutil::locate(16, 16);       cout << "ï¿½ï¿½ï¿½ï¿½ï¿½";
-rlutil::locate(16, 17);       cout << "ï¿½ ï¿½ï¿½";
-rlutil::locate(16, 18);       cout << "ï¿½ ";
-rlutil::locate(16, 19);       cout << "ï¿½ï¿½ï¿½ï¿½ï¿½";
+rlutil::locate(16, 16);       cout << "ÛÛÛÛÛ";
+rlutil::locate(16, 17);       cout << "Û ÜÜ";
+rlutil::locate(16, 18);       cout << "Û ";
+rlutil::locate(16, 19);       cout << "ÛÛÛÛÛ";
 rlutil::locate(16, 20);       cout << "        " ;
-rlutil::locate(16, 21);       cout << "ï¿½ï¿½ ï¿½";
-rlutil::locate(16, 22);       cout << "ï¿½ ï¿½ï¿½ ";
+rlutil::locate(16, 21);       cout << "ÛÛ Û";
+rlutil::locate(16, 22);       cout << "Û ÛÛ ";
 rlutil::locate(16, 23);       cout << "            ";
-rlutil::locate(16, 24);       cout << "ï¿½   ï¿½";
-rlutil::locate(16, 25);       cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ ";
+rlutil::locate(16, 24);       cout << "Û   Û";
+rlutil::locate(16, 25);       cout << "ÛÛÛÛÛ ";
 rlutil::locate(16, 26);
 
 
 
 
- rlutil::locate(27, 13);   cout<< "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»";
-rlutil::locate(27, 14);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 15);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 16);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 17);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 18);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 19);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 20);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 21);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 22);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 23);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 24);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 25);    cout<< "ï¿½                                                    ï¿½";
-rlutil::locate(27, 26);   cout<<  "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼";
+ rlutil::locate(27, 13);   cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
+rlutil::locate(27, 14);    cout<< "º                                                    º";
+rlutil::locate(27, 15);    cout<< "º                                                    º";
+rlutil::locate(27, 16);    cout<< "º                                                    º";
+rlutil::locate(27, 17);    cout<< "º                                                    º";
+rlutil::locate(27, 18);    cout<< "º                                                    º";
+rlutil::locate(27, 19);    cout<< "º                                                    º";
+rlutil::locate(27, 20);    cout<< "º                                                    º";
+rlutil::locate(27, 21);    cout<< "º                                                    º";
+rlutil::locate(27, 22);    cout<< "º                                                    º";
+rlutil::locate(27, 23);    cout<< "º                                                    º";
+rlutil::locate(27, 24);    cout<< "º                                                    º";
+rlutil::locate(27, 25);    cout<< "º                                                    º";
+rlutil::locate(27, 26);   cout<<  "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
 
 rlutil::setColor(rlutil::BLUE);
 rlutil::locate(32, 15);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;
@@ -130,7 +129,8 @@ rlutil::locate(32, 21);cout << "[ 3 ] Acceder al menu Barberos  "<<endl;
  rlutil::setColor(rlutil::BLUE);
 rlutil::locate(32, 24);cout << "[ 4 ] Informes..."<<endl<<endl;
 rlutil::setColor(rlutil::RED);
-
+//rlutil::locate(12, 27);cout <<"---------------------------"<<endl;
+//rlutil::locate(48, 27);cout <<"---------------------------"<<endl;
 
 rlutil::setColor(rlutil::RED);
  rlutil::locate(32, 27);cout<< "Elegir una opcion,  0 (cero)  para salir"<<endl;
@@ -156,13 +156,15 @@ default: system ("cls");
     cout<<" 0 (cero) para salir del Programa..."<<endl;
     cout<<endl<<endl;  system ("pause");
      system ("cls");
- }
-   }(while opcion != 0);
 }
+ } while ( opcion != 0);
+ // system("cls"); // probar;
+  }
+
 
 
 void MenuManager::MenuCliente()const{
-    
+
    MenuManager manager;
 
   int opcion;
@@ -476,73 +478,27 @@ system("cls"); // limpia pantalla ;
 while ( opcion != 0);
 }
 
-void MenuManager::MenuBarberos()const
-{
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
+ void MenuManager::MenuBarberos()const{
 
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
-
-    // do {
-
-    cout<<"1- ï¿½Sos un Barbero nuevo? "<<endl;
-    cout<<"2- Editar Informacion de Barbero. "<<endl;
-    cout<<"3- Borrar Informacion. "<<endl;
-    cout<<"4-  "<<endl;
-    cout <<"-------------------------------"<<endl;
-    cout << "Presionar La tecla 0 (cero) para volver";
-    cout << " al menu principal"<<endl;
-    cout << "Opcion: # ";
-    cin>> opcion;
-    /*
-    switch (opcion){
-     case 1: // barb.CrearBarbero (); break; // Agregar funcion crear barbero
-      case 2:
-      case 3:
-     case 4:
-    }
-
-    } while ( opcion != 0);
-      }
-      */
-}
-
-void MenuManager::MenuTurnos()const
-{
-    system("cls"); // limpia pantalla ;
-    int opcion;
-    Fecha fecha;
-    Hora hora;
-
-void MenuManager::MenuTurnos()const{
-     
    MenuManager manager;
    int opcion;
 
 
-
-  //  do {
+   // do {
    system("cls"); // limpia pantalla ;
-  LogoPorDefecto ();  //logo por defecto , aparece en todos los menus (barberia pacheco)
-     cout<<"1- Crear Cliente "<<endl;
-     cout<<"2- Editar Cliente  "<<endl;
-     cout<<"3- Borrar cliente "<<endl;
-     cout<<"4- Listar El total de clintes "<<endl;
+LogoPorDefecto ();  //logo por defecto , aparece en todos los menus (barberia pacheco)
+     cout<<"1- ¨Sos un Barbero nuevo? "<<endl;
+     cout<<"2- Editar Informacion de Barbero. "<<endl;
+     cout<<"3- Borrar Informacion. "<<endl;
+     cout<<"4-  "<<endl;
      cout <<"-------------------------------"<<endl;
      cout << "Presionar La tecla 0 (cero) para volver";
      cout << " al menu principal"<<endl;
      cout << "Opcion: # ";
      cin>> opcion;
-  /*
+/*
 switch (opcion){
- case 1:
+ case 1: // manager.CrearBarbero (); break; // Agregar funcion crear barbero
   case 2:
   case 3:
  case 4:
@@ -551,21 +507,67 @@ switch (opcion){
     cout<<" 0 (cero) para volver al menu principal."<<endl;
     cout<<endl<<endl;  system ("pause");
      system ("cls");
-     
-    /*
-    */
+}
+
+} while ( opcion != 0);
+  }
+  */
+ }
+
+
+
+
+
+void MenuManager::MenuTurnos()const{
+
+   MenuManager manager;
+   int opcion;
+
+ // do {
+   system("cls"); // limpia pantalla ;
+  LogoPorDefecto ();  //logo por defecto , aparece en todos los menus (barberia pacheco)
+
+     cout<<"1- Crear Turno  "<<endl;
+     cout<<"2- Editar Turno  "<<endl;
+     cout<<"3- Borrar Turno Programado "<<endl;
+     cout <<"-------------------------------"<<endl;
+     cout << "Presionar La tecla 0 (cero) para volver";
+     cout << " al menu principal"<<endl;
+     cout << "Opcion: # ";
+     cin>> opcion;
+/*
+switch (opcion){
+ case 1:
+
+  case 2:
+
+  case 3:
+
+ case 4:
+
+ case 0: MenuPrincipal ();
+
+ default: system ("cls");
+     cout<< "Opcion invalida. Ingresa un numero valido para acceder."<<endl;
+    cout<<" 0 (cero) para volver al menu principal."<<endl;
+    cout<<endl<<endl;  system ("pause");
+     system ("cls");
+    }
+
+} (while opcion != 0);
+
+*/
 }
 
 
 
  void MenuManager::MuestroInformes()const{
-      
+      system("cls"); // limpia pantalla ;
    MenuManager manager;
 
    int opcion;
 
- do {
- system("cls"); // limpia pantalla ;
+//  do {
   LogoPorDefecto ();  //logo por defecto , aparece en todos los menus (barberia pacheco)
 
 cout <<"-------------------------------"<<endl;
@@ -587,28 +589,21 @@ switch (opcion){
     cout<<" 0 (cero) para volver al menu principal."<<endl;
     cout<<endl<<endl;  system ("pause");
      system ("cls");
-
-  }
-   } (while opcion != 0);
-    */
 }
 
+} while ( opcion != 0);
+*/
+  }
 
-void MenuManager::SubMenuInfFinancieros ()const
-{
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
 
  void MenuManager::SubMenuInfFinancieros ()const {
-       system("cls"); // limpia pantalla ;
+
    MenuManager  manager;
 
    int opcion;
 
 
-  do {
+  //do {
      system("cls"); // limpia pantalla ;
  LogoPorDefecto ();  //logo por defecto , aparece en todos los menus (barberia pacheco)
  cout <<"-------------------------------"<<endl;
@@ -640,15 +635,9 @@ case 4:
      */
 }
 
-void MenuManager::SubMenuInfGestionClientes () const
-{
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
+
 
  void MenuManager::SubMenuInfGestionClientes () const{
-       system("cls"); // limpia pantalla ;
    MenuManager manager;
 
    int opcion;
@@ -656,12 +645,13 @@ void MenuManager::SubMenuInfGestionClientes () const
 
 
   // do {
+  system("cls"); // limpia pantalla ;
   LogoPorDefecto ();  //logo por defecto , aparece en todos los menus (barberia pacheco)
   cout <<"-------------------------------"<<endl;
      cout<<"1-  Clientes Frecuentes"<<endl;
      cout<< "2- Turnos realizados y cancelados"<<endl;
 
-    cout <<"-------------------------------"<<endl;
+ cout <<"-------------------------------"<<endl;
 
      cout << "Presionar La tecla 0 (cero) para volver";
      cout << " al Sub Menu de Informes... "<<endl;
@@ -678,4 +668,8 @@ switch (opcion){
     cout<<" 0 (cero) para volver al Menu Informes..."<<endl;
     cout<<endl<<endl;  system ("pause");
      system ("cls");
+}
+} while ( opcion != 0);
+*/
+
 }
