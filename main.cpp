@@ -1,34 +1,22 @@
 #include <iostream>
-#include "Persona.h"
-#include "Fecha.h"
-#include "Hora.h"
 #include "MenuManager.h"
 using namespace std;
 
 int main() {
 
-    MenuManager menu;
 
-   menu.MenuPrincipal();
+  //  MenuManager menu;
 
-   // terminar de configurar los menus (dise¤o )
+  // menu.MenuPrincipal();
+
+  
 
 
-  /*  Fecha fecha;
-    Hora hora;
-    Persona persona;
 
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout << "=== Cargar Persona ===" <<endl;
-    persona.cargar();
-    cout << endl;
-    persona.mostrar();
 
-    */
 
+    MenuManager manager;
+    manager.MenuPrincipal();
+ 
     return 0;
-
 }

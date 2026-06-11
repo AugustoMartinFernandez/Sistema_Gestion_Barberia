@@ -47,8 +47,12 @@
 		<Unit filename="include/entidades/Persona.h" />
 		<Unit filename="include/entidades/Turno.h" />
 		<Unit filename="include/interfaz/MenuManager.h" />
+<<<<<<< HEAD
 		<Unit filename="include/interfaz/facha.h" />
 		<Unit filename="include/interfaz/rlutil.h" />
+=======
+		<Unit filename="include/utilidades/ArchivoConfiguracion.h" />
+>>>>>>> d061d3ce3e6d8704d83dc82c7a32e12150e03af8
 		<Unit filename="include/utilidades/Fecha.h" />
 		<Unit filename="include/utilidades/Hora.h" />
 		<Unit filename="main.cpp" />
@@ -58,6 +62,7 @@
 		<Unit filename="src/entidades/Persona.cpp" />
 		<Unit filename="src/entidades/Turno.cpp" />
 		<Unit filename="src/interfaz/MenuManager.cpp" />
+		<Unit filename="src/utilidades/ArchivoConfiguracion.cpp" />
 		<Unit filename="src/utilidades/Fecha.cpp" />
 		<Unit filename="src/utilidades/Hora.cpp" />
 		<Extensions />
