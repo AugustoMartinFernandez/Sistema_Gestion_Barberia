@@ -13,6 +13,7 @@
 #include "Cliente.h"
 #include "ArchivoConfiguracion.h"
 #include "ArchivoClientes.h"
+#include "Funciones.h"
 using namespace std;
 /*
 void MenuManager::LogoPorDefecto ()const {
@@ -21,22 +22,22 @@ Fecha fecha;
 Hora hora;
 
 rlutil::setColor(rlutil::YELLOW);
- rlutil::locate(2, 1);   cout<<"ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
- rlutil::locate(2, 2);   cout<<"                                                                º";
- rlutil::locate(2, 3);   cout<<"                                                                º";
-rlutil::locate(2, 4);    cout<<"                                                                º";
-rlutil::locate(2, 5);    cout<<"                                                                º";
-rlutil::locate(2, 6);    cout<<"                                                                º";
-rlutil::locate(2, 7);    cout<<"                                                                º";
-rlutil::locate(2, 8);    cout<<"                                                                º";
-rlutil::locate(2, 9);    cout<<"                                                                º";
-rlutil::locate(2, 10);   cout<<"                                                                º";
-rlutil::locate(2, 11);   cout<<"                                                                º";
-rlutil::locate(2, 12);   cout<<"                                                                º";
-rlutil::locate(2, 13);       cout<< "                                                                º";
- rlutil::locate(2, 14);      cout<< "                                                                º";
- rlutil::locate(2, 15);      cout<< "                                                                º";
- rlutil::locate(2, 16);      cout<< "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
+ rlutil::locate(2, 1);   cout<<"Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»";
+ rlutil::locate(2, 2);   cout<<"                                                                Âº";
+ rlutil::locate(2, 3);   cout<<"                                                                Âº";
+rlutil::locate(2, 4);    cout<<"                                                                Âº";
+rlutil::locate(2, 5);    cout<<"                                                                Âº";
+rlutil::locate(2, 6);    cout<<"                                                                Âº";
+rlutil::locate(2, 7);    cout<<"                                                                Âº";
+rlutil::locate(2, 8);    cout<<"                                                                Âº";
+rlutil::locate(2, 9);    cout<<"                                                                Âº";
+rlutil::locate(2, 10);   cout<<"                                                                Âº";
+rlutil::locate(2, 11);   cout<<"                                                                Âº";
+rlutil::locate(2, 12);   cout<<"                                                                Âº";
+rlutil::locate(2, 13);       cout<< "                                                                Âº";
+ rlutil::locate(2, 14);      cout<< "                                                                Âº";
+ rlutil::locate(2, 15);      cout<< "                                                                Âº";
+ rlutil::locate(2, 16);      cout<< "ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼";
 
   rlutil::locate(70, 6); cout << "--- Fecha: " <<fecha.toString()<<endl;
    rlutil::locate(70, 8);  cout << "--- Hora: " <<hora.toString()<<endl;
@@ -46,19 +47,19 @@ rlutil::locate(2, 13);       cout<< "                                           
 
 
  rlutil::locate(11, 2); cout<< R"(
-     ÛÛÛÛÛÛ»  ÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛÛ»ÛÛÛÛÛÛ» ÛÛ» ÛÛÛÛÛ»
-    ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÍÍ¼ÛÛÉÍÍÛÛ»ÛÛºÛÛÉÍÍÛÛ»
-    ÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛºÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÉ¼ÛÛÛÛÛ»  ÛÛÛÛÛÛÉ¼ÛÛºÛÛÛÛÛÛÛº
-    ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛºÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍ¼  ÛÛÉÍÍÛÛ»ÛÛºÛÛÉÍÍÛÛº
-    ÛÛÛÛÛÛÉ¼ÛÛº  ÛÛºÛÛº  ÛÛºÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛ»ÛÛº  ÛÛºÛÛºÛÛº  ÛÛº
-    ÈÍÍÍÍÍ¼ ÈÍ¼  ÈÍ¼ÈÍ¼  ÈÍ¼ÈÍÍÍÍÍ¼ ÈÍÍÍÍÍÍ¼ÈÍ¼  ÈÍ¼ÈÍ¼ÈÍ¼  ÈÍ¼
+     Ã›Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Â»
+    Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›ÂºÃ›Ã›Ã‰ÃÃÃ›Ã›Â»
+    Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã›Âº
+    Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›ÂºÃ›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÂ¼  Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›ÂºÃ›Ã›Ã‰ÃÃÃ›Ã›Âº
+    Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›ÂºÃ›Ã›Âº  Ã›Ã›Âº
+    ÃˆÃÃÃÃÃÂ¼ ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÃÃÃÃÂ¼ ÃˆÃÃÃÃÃÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼
 
-           ÛÛÛÛÛÛ»  ÛÛÛÛÛ»  ÛÛÛÛÛÛ»ÛÛ»  ÛÛ»ÛÛÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛ»
-           ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÍÍ¼ÛÛº  ÛÛºÛÛÉÍÍÍÍ¼ÛÛÉÍÍÍÍ¼ÛÛÉÍÍÍÛÛ»
-           ÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛºÛÛº     ÛÛÛÛÛÛÛºÛÛÛÛÛ»  ÛÛº     ÛÛº   ÛÛº
-           ÛÛÉÍÍÍ¼ ÛÛÉÍÍÛÛºÛÛº     ÛÛÉÍÍÛÛºÛÛÉÍÍ¼  ÛÛº     ÛÛº   ÛÛº
-           ÛÛº     ÛÛº  ÛÛºÈÛÛÛÛÛÛ»ÛÛº  ÛÛºÛÛÛÛÛÛÛ»ÈÛÛÛÛÛÛ»ÈÛÛÛÛÛÛÉ¼
-           ÈÍ¼     ÈÍ¼  ÈÍ¼ ÈÍÍÍÍÍ¼ÈÍ¼  ÈÍ¼ÈÍÍÍÍÍÍ¼ ÈÍÍÍÍÍ¼ ÈÍÍÍÍÍ¼
+           Ã›Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Â»  Ã›Ã›Â»Ã›Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â»
+           Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Ã‰ÃÃÃÃ›Ã›Â»
+           Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã›ÂºÃ›Ã›Âº     Ã›Ã›Ã›Ã›Ã›Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Âº     Ã›Ã›Âº   Ã›Ã›Âº
+           Ã›Ã›Ã‰ÃÃÃÂ¼ Ã›Ã›Ã‰ÃÃÃ›Ã›ÂºÃ›Ã›Âº     Ã›Ã›Ã‰ÃÃÃ›Ã›ÂºÃ›Ã›Ã‰ÃÃÂ¼  Ã›Ã›Âº     Ã›Ã›Âº   Ã›Ã›Âº
+           Ã›Ã›Âº     Ã›Ã›Âº  Ã›Ã›ÂºÃˆÃ›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã›Â»ÃˆÃ›Ã›Ã›Ã›Ã›Ã›Â»ÃˆÃ›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼
+           ÃˆÃÂ¼     ÃˆÃÂ¼  ÃˆÃÂ¼ ÃˆÃÃÃÃÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÃÃÃÃÃÂ¼ ÃˆÃÃÃÃÃÂ¼ ÃˆÃÃÃÃÃÂ¼
           )";
 }
 
@@ -68,19 +69,19 @@ void MenuManager::MuestroLogo ()const {
 cout<< R"(
     ===================================================================================
 
-  ÛÛÛÛÛÛ»  ÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛÛ»ÛÛÛÛÛÛ» ÛÛ» ÛÛÛÛÛ»
-  ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÍÍ¼ÛÛÉÍÍÛÛ»ÛÛºÛÛÉÍÍÛÛ»
-  ÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛºÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÉ¼ÛÛÛÛÛ»  ÛÛÛÛÛÛÉ¼ÛÛºÛÛÛÛÛÛÛº
-  ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛºÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍ¼  ÛÛÉÍÍÛÛ»ÛÛºÛÛÉÍÍÛÛº
-  ÛÛÛÛÛÛÉ¼ÛÛº  ÛÛºÛÛº  ÛÛºÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛ»ÛÛº  ÛÛºÛÛºÛÛº  ÛÛº
-  ÈÍÍÍÍÍ¼ ÈÍ¼  ÈÍ¼ÈÍ¼  ÈÍ¼ÈÍÍÍÍÍ¼ ÈÍÍÍÍÍÍ¼ÈÍ¼  ÈÍ¼ÈÍ¼ÈÍ¼  ÈÍ¼
+  Ã›Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Â»
+  Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›ÂºÃ›Ã›Ã‰ÃÃÃ›Ã›Â»
+  Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã›Âº
+  Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›ÂºÃ›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÂ¼  Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›ÂºÃ›Ã›Ã‰ÃÃÃ›Ã›Âº
+  Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›ÂºÃ›Ã›Âº  Ã›Ã›Âº
+  ÃˆÃÃÃÃÃÂ¼ ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÃÃÃÃÂ¼ ÃˆÃÃÃÃÃÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼
 
-          ÛÛÛÛÛÛ»  ÛÛÛÛÛ»  ÛÛÛÛÛÛ»ÛÛ»  ÛÛ»ÛÛÛÛÛÛÛ» ÛÛÛÛÛÛ» ÛÛÛÛÛÛ»
-          ÛÛÉÍÍÛÛ»ÛÛÉÍÍÛÛ»ÛÛÉÍÍÍÍ¼ÛÛº  ÛÛºÛÛÉÍÍÍÍ¼ÛÛÉÍÍÍÍ¼ÛÛÉÍÍÍÛÛ»
-          ÛÛÛÛÛÛÉ¼ÛÛÛÛÛÛÛºÛÛº     ÛÛÛÛÛÛÛºÛÛÛÛÛ»  ÛÛº     ÛÛº   ÛÛº
-          ÛÛÉÍÍÍ¼ ÛÛÉÍÍÛÛºÛÛº     ÛÛÉÍÍÛÛºÛÛÉÍÍ¼  ÛÛº     ÛÛº   ÛÛº
-          ÛÛº     ÛÛº  ÛÛºÈÛÛÛÛÛÛ»ÛÛº  ÛÛºÛÛÛÛÛÛÛ»ÈÛÛÛÛÛÛ»ÈÛÛÛÛÛÛÉ¼
-          ÈÍ¼     ÈÍ¼  ÈÍ¼ ÈÍÍÍÍÍ¼ÈÍ¼  ÈÍ¼ÈÍÍÍÍÍÍ¼ ÈÍÍÍÍÍ¼ ÈÍÍÍÍÍ¼
+          Ã›Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Â»  Ã›Ã›Â»Ã›Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â» Ã›Ã›Ã›Ã›Ã›Ã›Â»
+          Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃ›Ã›Â»Ã›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Ã‰ÃÃÃÃÂ¼Ã›Ã›Ã‰ÃÃÃÃ›Ã›Â»
+          Ã›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼Ã›Ã›Ã›Ã›Ã›Ã›Ã›ÂºÃ›Ã›Âº     Ã›Ã›Ã›Ã›Ã›Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Â»  Ã›Ã›Âº     Ã›Ã›Âº   Ã›Ã›Âº
+          Ã›Ã›Ã‰ÃÃÃÂ¼ Ã›Ã›Ã‰ÃÃÃ›Ã›ÂºÃ›Ã›Âº     Ã›Ã›Ã‰ÃÃÃ›Ã›ÂºÃ›Ã›Ã‰ÃÃÂ¼  Ã›Ã›Âº     Ã›Ã›Âº   Ã›Ã›Âº
+          Ã›Ã›Âº     Ã›Ã›Âº  Ã›Ã›ÂºÃˆÃ›Ã›Ã›Ã›Ã›Ã›Â»Ã›Ã›Âº  Ã›Ã›ÂºÃ›Ã›Ã›Ã›Ã›Ã›Ã›Â»ÃˆÃ›Ã›Ã›Ã›Ã›Ã›Â»ÃˆÃ›Ã›Ã›Ã›Ã›Ã›Ã‰Â¼
+          ÃˆÃÂ¼     ÃˆÃÂ¼  ÃˆÃÂ¼ ÃˆÃÃÃÃÃÂ¼ÃˆÃÂ¼  ÃˆÃÂ¼ÃˆÃÃÃÃÃÃÂ¼ ÃˆÃÃÃÃÃÂ¼ ÃˆÃÃÃÃÃÂ¼
 
                                      _        _
                                     \ \     / /
@@ -111,23 +112,23 @@ void MenuManager::MenuPrincipal () const {
    rlutil::setColor(rlutil::YELLOW);
 rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u-P r i n c i p a l";
 rlutil::setColor(rlutil::BLUE);
- rlutil::locate(27, 19);   cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
+ rlutil::locate(27, 19);   cout<< "Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»";
  rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 20);    cout<< "º                                                    º";
+rlutil::locate(27, 20);    cout<< "Âº                                                    Âº";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 21);    cout<< "º                                                    º";
+rlutil::locate(27, 21);    cout<< "Âº                                                    Âº";
 rlutil::setColor(rlutil::BLUE);
-rlutil::locate(27, 22);    cout<< "º                                                    º";
+rlutil::locate(27, 22);    cout<< "Âº                                                    Âº";
  rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 23);    cout<< "º                                                    º";
+rlutil::locate(27, 23);    cout<< "Âº                                                    Âº";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 24);    cout<< "º                                                    º";
+rlutil::locate(27, 24);    cout<< "Âº                                                    Âº";
 rlutil::setColor(rlutil::BLUE);
-rlutil::locate(27, 25);    cout<< "º                                                    º";
+rlutil::locate(27, 25);    cout<< "Âº                                                    Âº";
 rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 26);    cout<< "º                                                    º";
+rlutil::locate(27, 26);    cout<< "Âº                                                    Âº";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 27);   cout<<  "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
+rlutil::locate(27, 27);   cout<<  "ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼";
 
 rlutil::setColor(rlutil::YELLOW);
 rlutil::locate(32, 20);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;
@@ -270,7 +271,7 @@ system("cls"); // limpia pantalla ;
                 {
                     Cliente leidos = reg.leer(i);
 
-                    // Solo mostramos si estï¿½ activo
+                    // Solo mostramos si estÃ¯Â¿Â½ activo
                     if(leidos.getActivo() == true)
                     {
                         leidos.mostrar();
@@ -298,6 +299,42 @@ system("cls"); // limpia pantalla ;
 while ( opcion != 0);
 }
  */
+
+
+void MenuManager::MenuBarberos()const
+{
+    system("cls"); // limpia pantalla ;
+    Fecha fecha;
+    Hora hora;
+    int opcion;
+  do {
+    cout <<"-------------------------------"<<endl;
+    cout << "=== Barberia Pacheco ==="<<endl;
+    cout << "--- Fecha: " <<fecha.toString()<<endl;
+    cout << "--- Hora: " <<hora.toString()<<endl;
+    cout <<endl;
+    cout <<"-------------------------------"<<endl;
+    cout<<"1- Â¨Sos un Barbero nuevo? "<<endl;
+    cout<<"2- Editar Informacion de Barbero. "<<endl;
+    cout<<"3- Borrar Informacion. "<<endl;
+    cout<<"4-  "<<endl;
+    cout <<"-------------------------------"<<endl;
+    cout << "Presionar La tecla 0 (cero) para volver";
+    cout << " al menu principal"<<endl;
+    cout << "Opcion: # ";
+    cin>> opcion;
+
+    switch (opcion){
+     case 1:  agregarBarbero(); break; // Agregar funcion crear barbero
+     case 2:break;
+     case 3:break;
+     case 4:break;
+    }
+    system ("pause");
+    system("cls");
+
+    } while ( opcion != 0);
+      }
 
 
 
