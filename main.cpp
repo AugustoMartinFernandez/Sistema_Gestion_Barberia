@@ -1,11 +1,14 @@
 #include <iostream>
 #include "MenuManager.h"
+#include "Logo.h"
 using namespace std;
 
 int main() {
 
+MenuManager manager;
 
-    MenuManager manager;
+      LogoPrincipal();
+
     manager.MenuPrincipal();
 
 

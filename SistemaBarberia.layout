@@ -2,14 +2,68 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="include\interfaz\MenuTurnos.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="145" topLine="0" />
+			<Cursor1 position="38" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\interfaz\MenuManager.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1496" topLine="18" />
+			<Cursor1 position="188" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\interfaz\MenuInformes.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="199" topLine="69" />
+		</Cursor>
+	</File>
+	<File name="src\interfaz\MenuTurnos.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="107" topLine="66" />
+		</Cursor>
+	</File>
+	<File name="src\interfaz\MenuCliente.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="95" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="193" />
+			<Collapse line="345" />
+		</Folding>
+	</File>
+	<File name="src\interfaz\MenuManager.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9553" topLine="124" />
+		</Cursor>
+	</File>
+	<File name="include\interfaz\MenuManager.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="199" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\interfaz\MenuBarberos.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="90" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\interfaz\MenuInformes.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="172" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\interfaz\MenuBarberos.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2149" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="src\interfaz\Logo.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7066" topLine="52" />
+		</Cursor>
+	</File>
+	<File name="include\interfaz\Logo.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="194" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
