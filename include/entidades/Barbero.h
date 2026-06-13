@@ -12,6 +12,6 @@ class Barbero: public Persona{
         //agregar setters y getters, mostrar todas las propiedades y mover a cpp esto
         const char *getEspecialidad() const;
         void setEspecialidad(const char *especialidad);
-        void cargar();
-        void mostrar() const;
+        void cargar() override;
+        void mostrar() const override;
 };

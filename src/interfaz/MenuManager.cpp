@@ -27,23 +27,24 @@ void MenuManager::MenuPrincipal () const {
    rlutil::setColor(rlutil::YELLOW);
 rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u-P r i n c i p a l";
 rlutil::setColor(rlutil::BLUE);
- rlutil::locate(27, 19);   cout<< "ษอออออออออออออออออออออออออออออออออออออออออออออออออออออป";
+ rlutil::locate(27, 19);   cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
  rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 20);    cout<< "บ                                                     บ";
+rlutil::locate(27, 20);    cout<< "บ                                                    บ";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 21);    cout<< "บ                                                     บ";
+rlutil::locate(27, 21);    cout<<"บ                                                    บ";
 rlutil::setColor(rlutil::BLUE);
-rlutil::locate(27, 22);    cout<< "บ                                                     บ";
+rlutil::locate(27, 22);    cout<<"บ                                                    บ";
  rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 23);    cout<< "บ                                                     บ";
+rlutil::locate(27, 23);    cout<<"บ                                                    บ";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 24);    cout<< "บ                                                     บ";
+rlutil::locate(27, 24);    cout<< "บ                                                    บ";
 rlutil::setColor(rlutil::BLUE);
-rlutil::locate(27, 25);    cout<< "บ                                                     บ";
+rlutil::locate(27, 25);    cout<< "บ                                                    บ";
 rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 26);    cout<< "บ                                                     บ";
+rlutil::locate(27, 26);    cout<<"บ                                                    บ";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 27);    cout<< "ศอออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+rlutil::locate(27, 27);    cout<< "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+
 
 rlutil::setColor(rlutil::YELLOW);
 rlutil::locate(32, 20);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;

@@ -149,18 +149,7 @@ void MenuCliente::EditarCliente() const {
               LogoConstante ();   //logo por defecto , aparece en todos los menuss(barberia pacheco)
 
 
-//rlutil::setColor(rlutil::WHITE);
-//rlutil::locate(27, 19);   cout<< "ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออป";
-// rlutil::setColor(rlutil::BLUE);
-//rlutil::locate(27, 20);   cout<< "บ                                                         บ";
-//rlutil::setColor(rlutil::RED);
-//rlutil::locate(27, 21);   cout<< "บ                                                         บ";
-//rlutil::setColor(rlutil::WHITE);
-//rlutil::locate(27, 22);   cout<< "บ                                                         บ";
-//rlutil::setColor(rlutil::BLUE);
-//rlutil::locate(27, 23);   cout<< "ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
-//rlutil::setColor(rlutil::YELLOW);
-//rlutil::locate(29, 21); cout<<" E d i t  D e  C l i e n t e";
+
 
 int buscarId,pos,cantidad;
     ArchivoClientes reg;
