@@ -1,310 +1,134 @@
 #include <iostream>
 #include "MenuManager.h"
-#include "Fecha.h"
-#include "Hora.h"
+
+#include "facha.h"
+#include "Logo.h"
+
+#include "MenuCliente.h"
+#include "MenuBarberos.h"
+#include  "MenuTurnos.h"
+#include "MenuInformes.h"
+
 #include "Cliente.h"
 #include "ArchivoConfiguracion.h"
 #include "ArchivoClientes.h"
+#include "Funciones.h"
 using namespace std;
 
+
+
 void MenuManager::MenuPrincipal () const {
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-
-    int opcion;
-
-    // LOGO IMPROVISADO  ( EDITAR LUEGO
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
-    system("pause");// presiona una tecla para continuar
-    system("cls"); // limpia pantalla ;
 
 
-    do {
-        cout <<"-------------------------------"<<endl;
-        cout << "=== Barberia Pacheco ==="<<endl;
-        cout << "--- Fecha: " <<fecha.toString()<<endl;
-        cout << "--- Hora: " <<hora.toString()<<endl;
-        cout <<endl;
-        cout <<"-------------------------------"<<endl;
-        cout << " [1] "<<endl;
-        cout << "Turnos (Agendar un turno, borrar turnos)"<<endl;
-        cout << " [2] "<<endl;
-        cout << "Acceder al menu  Para clientes"<<endl;
-        cout << " [3] "<<endl;
-        cout << "Acceder al menu Barberos  "<<endl;
-        cout << " [4] "<<endl;
-        cout << "Informes..."<<endl<<endl;
-        cout <<"-------------------------------"<<endl;
-        cout<< "Elegir una opcion, 0 para salir" ;
-        cout<<endl<< "Opcion:# ";
-        cin>>opcion;
-
-        switch (opcion) {
-            case 1:  MenuTurnos ();  break;
-            case 2:  MenuCliente (); break;
-            case 3:  MenuBarberos (); break;
-            case 4:  MuestroInformes (); break;
-            case 0:
-                system("cls");
-                cout<< "Gracias por utilizar el programa... ";
-                break;
-            default:  cout<< "Opcion invalida pa.";
-        }
-    } while ( opcion != 0);
-    // system("cls"); // probar;
-}
+  int opcion;
+  do {
+        system("cls"); // limpia pantalla ;
+   LogoConstante();
+   rlutil::setColor(rlutil::YELLOW);
+rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u-P r i n c i p a l";
+rlutil::setColor(rlutil::BLUE);
+ rlutil::locate(27, 19);   cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
+ rlutil::setColor(rlutil::WHITE);
+rlutil::locate(27, 20);    cout<< "บ                                                    บ";
+rlutil::setColor(rlutil::RED);
+rlutil::locate(27, 21);    cout<<"บ                                                    บ";
+rlutil::setColor(rlutil::BLUE);
+rlutil::locate(27, 22);    cout<<"บ                                                    บ";
+ rlutil::setColor(rlutil::WHITE);
+rlutil::locate(27, 23);    cout<<"บ                                                    บ";
+rlutil::setColor(rlutil::RED);
+rlutil::locate(27, 24);    cout<< "บ                                                    บ";
+rlutil::setColor(rlutil::BLUE);
+rlutil::locate(27, 25);    cout<< "บ                                                    บ";
+rlutil::setColor(rlutil::WHITE);
+rlutil::locate(27, 26);    cout<<"บ                                                    บ";
+rlutil::setColor(rlutil::RED);
+rlutil::locate(27, 27);    cout<< "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
 
 
-void MenuManager::MenuCliente()const{
-    Fecha fecha;
-    Hora hora;
-    int opcion;
+rlutil::setColor(rlutil::YELLOW);
+rlutil::locate(32, 20);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;
 
-    do {
-        system("cls"); // Movido adentro del do-while para que limpie cada vez que repite el menu
-        cout <<"-------------------------------"<<endl;
-        cout << "=== Barberia Pacheco ==="<<endl;
-        cout << "--- Fecha: " <<fecha.toString()<<endl;
-        cout << "--- Hora: " <<hora.toString()<<endl;
-        cout <<endl;
-        cout <<"-------------------------------"<<endl;
+rlutil::locate(32, 22);cout << "[ 2 ] Acceder al menu  Para clientes"<<endl;
 
-        cout<<"1- Crear Nuevo Cliente "<<endl;
-        cout<<"2- Editar Cliente  "<<endl;
-        cout<<"3- Borrar cliente "<<endl;
-        cout<<"4- Listado de  clientes "<<endl;
-        cout <<"-------------------------------"<<endl;
-        cout << "Presionar La tecla 0 (cero) para volver";
-        cout << " al menu principal"<<endl;
-        cout << "Opcion: # ";
-        cin>> opcion;
-        cin.ignore(); // LIMPIEZA DEL BUFFER:  para que cin.getline() funcione despues
+rlutil::locate(32, 24);cout << "[ 3 ] Acceder al menu Barberos  "<<endl;
 
-        switch (opcion){
-            case 1: {
-                cout << endl << "--- ALTA DE NUEVO CLIENTE ---" << endl;
-                Cliente cli;
-                cli.cargar();
+rlutil::locate(32, 26);cout << "[ 4 ] Informes"<<endl<<endl;
 
-                ArchivoConfiguracion config;
-                int nuevoId = config.getProximoIdCliente();
-                cli.setId(nuevoId);
+// rlutil::locate(32, 28);cout << "[ 5 ] Creditos..."<<endl<<endl;
 
-                ArchivoClientes reg;
 
-                if(reg.guardar(cli)){
-                    cout << "\n[EXITO] Cliente guardado correctamente con el ID: " << nuevoId << endl;
-                } else {
-                    cout << "\n[ERROR] No se pudo guardar el cliente en el disco." << endl;
-                }
-                system("pause");
-                break;
+
+rlutil::setColor(rlutil::WHITE);
+ rlutil::locate(32, 29);cout<< " Opcion 0 (cero) Para Salir Del Programa..."<<endl;
+ rlutil::setColor(rlutil::RED);  rlutil::locate(32, 30); cout<< "Eleccion: #  ";
+  rlutil::setColor(rlutil::BLUE);cin>>opcion;
+
+
+
+
+switch (opcion) {
+case 1:  {
+            MenuTurnos turn;
+             turn.InterfazMenuTurnos();
+             break;
+         }
+
+ case 2: {
+            MenuCliente client;
+          client.InterfazMenuCliente ();
+            break;
             }
-            case 2:
-            case 3:
-case 4: {
-                cout << endl << "--- LISTADO DE CLIENTES ---" << endl;
-                ArchivoClientes reg;
-                int total = reg.cantidadRegistros();
 
-                if(total > 0) {
-                    for(int i = 0; i < total; i++) {
-                        Cliente leidos = reg.leer(i);
-                        leidos.mostrar();
-                    } // ACA CERRAMOS EL FOR
-                } else { // Y RECIEN ACA ABRIMOS EL ELSE DEL IF
-                    cout << "No hay clientes registrados." << endl;
-                }
-
-                system("pause");
+    case 3:  {
+               MenuBarbero barbe;
+               barbe.InterfazMenuBarbero ();
+               break;
+              }
+        case 4:  {
+                MenuInformes infor;
+                infor.InterfazMenuinformes ();
                 break;
-            }
-        }
-    } while ( opcion != 0);
+
+                  }
+
+          case 5: {
+               Creditos ();
+               break;
+          }
+            case 0:  { system("cls");
+            rlutil::setColor(rlutil::LIGHTBLUE);
+            rlutil::locate(27, 5);
+        cout<< "Gracias por utilizar el programa... "<<endl<<endl; break;
+                  }
+
+default: system ("cls");
+    cout<< "Opcion invalida. Ingresa un numero valido para acceder."<<endl;
+    cout<<" 0 (cero) para salir del Programa..."<<endl;
+    cout<<endl<<endl;  system ("pause");
+     system ("cls");
 }
 
-void MenuManager::MenuBarberos()const{
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
-
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
-
-    // do {
-
-    cout<<"1- จSos un Barbero nuevo? "<<endl;
-    cout<<"2- Editar Informacion de Barbero. "<<endl;
-    cout<<"3- Borrar Informacion. "<<endl;
-    cout<<"4-  "<<endl;
-    cout <<"-------------------------------"<<endl;
-    cout << "Presionar La tecla 0 (cero) para volver";
-    cout << " al menu principal"<<endl;
-    cout << "Opcion: # ";
-    cin>> opcion;
-/*
-switch (opcion){
- case 1: // barb.CrearBarbero (); break; // Agregar funcion crear barbero
-  case 2:
-  case 3:
- case 4:
-}
-
-} while ( opcion != 0);
-  }
-  */
-}
-
-void MenuManager::MenuTurnos()const{
-    system("cls"); // limpia pantalla ;
-    int opcion;
-    Fecha fecha;
-    Hora hora;
-
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
-
-    //  do {
-    cout<<"1- Crear Cliente "<<endl;
-    cout<<"2- Editar Cliente  "<<endl;
-    cout<<"3- Borrar cliente "<<endl;
-    cout<<"4- Listar El total de clintes "<<endl;
-    cout << "Presionar La tecla 0 (cero) para volver";
-    cout << " al menu principal"<<endl;
-    cout << "Opcion: # ";
-    cin>> opcion;
-/*
-switch (opcion){
- case 1:
-  case 2:
-  case 3:
- case 4:
-}
-
-} while ( opcion != 0);
+ } while ( opcion != 0);
 
   }
-  */
-}
 
-void MenuManager::MuestroInformes()const{
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
+void MenuManager::Creditos() const {
 
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
-
-    //  do {
-    cout<<"1-  Informes Financieros (Recaudacion, etc.) "<<endl;
-    cout<<"2-  Informes de gestion de clientes y agenda "<<endl;
-    cout <<"-------------------------------"<<endl;
-
-    cout << "Presionar La tecla 0 (cero) para volver";
-    cout << " al menu principal"<<endl;
-    cout << "Opcion:# ";
-    cin>> opcion;
-/*
-switch (opcion){
- case 1: SubMenuInfFinancieros (); break;
-  case 2:SubMenuInfGestionClientes (); break;
-  case 0: MenuPrincipal (); break;
- default: cout << "Opcion invalida"
-}
-
-} while ( opcion != 0);
-*/
-}
+  cout<< "aca van los creditos xd";
+  }
 
 
-void MenuManager::SubMenuInfFinancieros ()const {
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
 
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
 
-    //  do {
-    cout<<"1-  Recaudacion (Diaria, Mensual, Anual.) "<<endl;
-    cout<<"2-  Servicios Mas solicitados "<<endl;
-    cout<<"3-  Barbero que mas cortes hizo"<<endl;
-    cout<<"4-  Metodos de pago utilizados "<<endl;
-    cout <<"-------------------------------"<<endl;
 
-    cout << "Presionar La tecla 0 (cero) para volver";
-    cout << " al sub Menu Informes... "<<endl;
-    cout << "Opcion:# ";
-    cin>> opcion;
-/*
-switch (opcion){
-case 1:
-case 2:
-case 3:
-case 4:
-  case 0: MuestroInformes (); break;
- default: cout << "Opcion invalida";
-}
 
-} while ( opcion != 0);
-*/
-}
 
-void MenuManager::SubMenuInfGestionClientes () const{
-    system("cls"); // limpia pantalla ;
-    Fecha fecha;
-    Hora hora;
-    int opcion;
 
-    cout <<"-------------------------------"<<endl;
-    cout << "=== Barberia Pacheco ==="<<endl;
-    cout << "--- Fecha: " <<fecha.toString()<<endl;
-    cout << "--- Hora: " <<hora.toString()<<endl;
-    cout <<endl;
-    cout <<"-------------------------------"<<endl;
 
-    // do {
-    cout<<"1-  Clientes Frecuentes"<<endl;
-    cout<< "2- Turnos realizados y cancelados"<<endl;
 
-    cout <<"-------------------------------"<<endl;
 
-    cout << "Presionar La tecla 0 (cero) para volver";
-    cout << " al Sub Menu de Informes... "<<endl;
-    cout << "Opcion:# ";
-    cin>> opcion;
-/*
-switch (opcion){
- case 1:
-  case 2:
-  case 0: MuestroInformes(); break;
- default: cout << "Opcion invalida";
-}
-} while ( opcion != 0);
-*/
-}
+
+
+
+

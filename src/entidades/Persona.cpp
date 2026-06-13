@@ -14,6 +14,11 @@ Persona::Persona() {
     _activo = false;
 }
 
+Persona::~Persona() {
+    // Queda vacio porque Persona no pide memoria dinamica con 'new' internamente,
+    // pero su existencia garantiza el polimorfismo seguro para las clases hijas.
+}
+
 // Setters
 void Persona::setId(int id) {
      _id = id;
@@ -60,6 +65,7 @@ void Persona::cargar(){
     char emailAux[50];
 
     cout << "Nombre: ";
+    //cin.ignore();
     cin.getline(nombreAux, 30);
     setNombre(nombreAux);
 

@@ -42,23 +42,42 @@
 			<Add directory="C:/Users/mff06/Desktop/TP_Barberia/SistemaBarberia/include" />
 		</Compiler>
 		<Unit filename="include/entidades/ArchivoClientes.h" />
+		<Unit filename="include/entidades/Barbero.h" />
+		<Unit filename="include/entidades/BarberoArchivo.h" />
 		<Unit filename="include/entidades/Cliente.h" />
 		<Unit filename="include/entidades/Pago.h" />
 		<Unit filename="include/entidades/Persona.h" />
 		<Unit filename="include/entidades/Turno.h" />
 		<Unit filename="include/interfaz/MenuManager.h" />
+		<Unit filename="include/interfaz/Logo.h" />
+		<Unit filename="include/interfaz/MenuBarberos.h" />
+		<Unit filename="include/interfaz/MenuCliente.h" />
+		<Unit filename="include/interfaz/MenuInformes.h" />
+		<Unit filename="include/interfaz/MenuManager.h" />
+		<Unit filename="include/interfaz/MenuTurnos.h" />
+		<Unit filename="include/interfaz/rlutil.h" />
 		<Unit filename="include/utilidades/ArchivoConfiguracion.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
+		<Unit filename="include/utilidades/Funciones.h" />
 		<Unit filename="include/utilidades/Hora.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/entidades/ArchivoClientes.cpp" />
+		<Unit filename="src/entidades/Barbero.cpp" />
+		<Unit filename="src/entidades/BarberoArchivo.cpp" />
 		<Unit filename="src/entidades/Cliente.cpp" />
 		<Unit filename="src/entidades/Pago.cpp" />
 		<Unit filename="src/entidades/Persona.cpp" />
 		<Unit filename="src/entidades/Turno.cpp" />
 		<Unit filename="src/interfaz/MenuManager.cpp" />
+		<Unit filename="src/interfaz/Logo.cpp" />
+		<Unit filename="src/interfaz/MenuBarberos.cpp" />
+		<Unit filename="src/interfaz/MenuCliente.cpp" />
+		<Unit filename="src/interfaz/MenuInformes.cpp" />
+		<Unit filename="src/interfaz/MenuManager.cpp" />
+		<Unit filename="src/interfaz/MenuTurnos.cpp" />
 		<Unit filename="src/utilidades/ArchivoConfiguracion.cpp" />
 		<Unit filename="src/utilidades/Fecha.cpp" />
+		<Unit filename="src/utilidades/Funciones.cpp" />
 		<Unit filename="src/utilidades/Hora.cpp" />
 		<Extensions />
 	</Project>
