@@ -7,7 +7,7 @@ private:
     int _id;
     int _idCliente;
     int _idBarbero;
-    int _idServicio;
+    int _idServicio; // servicio va a ser dependiendo del servicio un numero listado en las opciones
 
     Fecha _fecha;
     Hora _hora;
