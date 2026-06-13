@@ -179,8 +179,11 @@ case 1:  {
                Creditos ();
                break;
           }
-            case 0: system("cls");
-        cout<< "Gracias por utilizar el programa... "; break;
+            case 0:  { system("cls");
+            rlutil::setColor(rlutil::LIGHTBLUE);
+            rlutil::locate(27, 5);
+        cout<< "Gracias por utilizar el programa... "<<endl<<endl; break;
+                  }
 
 default: system ("cls");
     cout<< "Opcion invalida. Ingresa un numero valido para acceder."<<endl;
