@@ -11,6 +11,10 @@ private:
 public:
     BarberoArchivo(std::string nombre="barberos.dat");
     bool cargarBarbero(Barbero reg);
+    int cantidadRegistros();
+    Barbero leer(int pos);
+    int buscar(int idBarbero);
+    bool modificarBarbero(Barbero barb, int pos);
 };
 
 #endif // BARBEROARCHIVO_H_INCLUDED
