@@ -312,7 +312,7 @@ rlutil::locate(27, 27);   cout<<  "ศออออออออออออออออออออออออออออออออออออออออออออ
   rlutil::setColor(rlutil::BLUE);cin>>subOpcion;
 
         if (subOpcion == 0 ) {
-             InterfazMenuCliente ();
+             return;
         }
             while(subOpcion != 1 && subOpcion != 2){
                 cout << "Opcion invalida. Ingrese 1 para Baja o 2 para Reactivar: ";
