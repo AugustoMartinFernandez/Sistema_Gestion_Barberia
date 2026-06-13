@@ -24,23 +24,24 @@ void MenuManager::MenuPrincipal () const {
    rlutil::setColor(rlutil::YELLOW);
 rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u-P r i n c i p a l";
 rlutil::setColor(rlutil::BLUE);
- rlutil::locate(27, 19);   cout<< "Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»";
+ rlutil::locate(27, 19);   cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
  rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 20);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 20);    cout<< "º                                                    º";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 21);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 21);    cout<<"º                                                    º";
 rlutil::setColor(rlutil::BLUE);
-rlutil::locate(27, 22);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 22);    cout<<"º                                                    º";
  rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 23);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 23);    cout<<"º                                                    º";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 24);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 24);    cout<< "º                                                    º";
 rlutil::setColor(rlutil::BLUE);
-rlutil::locate(27, 25);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 25);    cout<< "º                                                    º";
 rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 26);    cout<< "Âº                                                    Âº";
+rlutil::locate(27, 26);    cout<<"º                                                    º";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 27);   cout<<  "ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼";
+rlutil::locate(27, 27);    cout<< "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
+
 
 rlutil::setColor(rlutil::YELLOW);
 rlutil::locate(32, 20);cout << "[ 1 ] Turnos (Agendar un turno, borrar turnos)"<<endl;
@@ -92,8 +93,11 @@ case 1:  {
                Creditos ();
                break;
           }
-            case 0: system("cls");
-        cout<< "Gracias por utilizar el programa... "; break;
+            case 0:  { system("cls");
+            rlutil::setColor(rlutil::LIGHTBLUE);
+            rlutil::locate(27, 5);
+        cout<< "Gracias por utilizar el programa... "<<endl<<endl; break;
+                  }
 
 default: system ("cls");
     cout<< "Opcion invalida. Ingresa un numero valido para acceder."<<endl;
@@ -246,12 +250,6 @@ void MenuManager::MenuBarberos()const
 
     } while ( opcion != 0);
       }
-
-
-
-
-
-
 /*
 void MenuManager::MenuTurnos()const{
 

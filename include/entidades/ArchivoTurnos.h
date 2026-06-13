@@ -19,5 +19,5 @@ Turno leer(int pos);
 // Buscar Clientes por ID
 int buscar(int idTurno);
 // Medimos el tamaño del cliente
-int cantidadRegistros();
-};
+}
+

@@ -60,6 +60,8 @@ bool Turno::getActivo() const{
 }
 
 
+
+
 void Turno::cargar(){
 
     int dia, mes, anio;
@@ -85,6 +87,29 @@ void Turno::cargar(){
         cout << "ID Invalido. Intente nuevamente: ";
         cin >> _idServicio;
     }
+
+    cout << "Dia: ";
+    cin >> dia;
+
+    cout << "Mes: ";
+    cin >> mes;
+
+    cout << "Anio: ";
+    cin >> anio;
+
+    _fecha.setDia(dia);
+    _fecha.setMes(mes);
+    _fecha.setAnio(anio);
+
+    cout << "Hora: ";
+    cin >> hora;
+
+    cout << "Minutos: ";
+    cin >> minuto;
+
+    _hora.setHora(hora);
+    _hora.setMinuto(minuto);
+    _hora.setSegundo(0); // dejamos en 0 para redondear siempre y solo trabajamos con hora y minutos
 
     do {
         cout << "Dia: ";

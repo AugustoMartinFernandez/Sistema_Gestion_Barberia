@@ -5,12 +5,14 @@
 ArchivoTurnos::ArchivoTurnos(){
     _nombreArchivo = "Turnos.dat";
 }
+
 // Constructor con parametro
 ArchivoTurnos::ArchivoTurnos(std::string nombreArchivo) {
     _nombreArchivo = nombreArchivo;
 }
 
-// Dar de alta Clientes
+
+// Dar de alta Turnos
 bool ArchivoTurnos::guardar(Turno reg){
     FILE *ptr = fopen(_nombreArchivo.c_str(), "ab");
     if(ptr == nullptr){
@@ -23,7 +25,8 @@ bool ArchivoTurnos::guardar(Turno reg){
     // Devolvemos el resultado de la escritura
     return escribio;
 }
-// Modificacion/Baja de Clientes
+
+// Modificacion/Baja de Turnos
 bool ArchivoTurnos::guardar(Turno reg, int pos){
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb+");
     if(pFile == nullptr){
@@ -34,7 +37,8 @@ bool ArchivoTurnos::guardar(Turno reg, int pos){
     fclose(pFile);
     return escribio;
 }
-// Leer Clientes
+
+// Leer Turnos
 Turno ArchivoTurnos::leer(int pos){
      Turno aux; // Creo una variable objeto para guardar aqui los datos leidos
      FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
@@ -46,7 +50,8 @@ Turno ArchivoTurnos::leer(int pos){
      fclose(pFile);
      return aux;
 }
-// Buscar Clientes por ID
+
+// Buscar Turnos por ID
 int ArchivoTurnos::buscar(int idTurno){
     int total = cantidadRegistros();
     for(int i = 0; i < total; i++){
@@ -58,6 +63,7 @@ int ArchivoTurnos::buscar(int idTurno){
     }
      return -1;
 }
+
 // Cantidad de registros guardados
 int ArchivoTurnos::cantidadRegistros(){
     int tamanio;
