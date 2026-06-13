@@ -43,15 +43,21 @@
 		</Compiler>
 		<Unit filename="include/entidades/ArchivoClientes.h" />
 		<Unit filename="include/entidades/Cliente.h" />
+		<Unit filename="include/entidades/Pago.h" />
 		<Unit filename="include/entidades/Persona.h" />
+		<Unit filename="include/entidades/Turno.h" />
 		<Unit filename="include/interfaz/MenuManager.h" />
+		<Unit filename="include/utilidades/ArchivoConfiguracion.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
 		<Unit filename="include/utilidades/Hora.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/entidades/ArchivoClientes.cpp" />
 		<Unit filename="src/entidades/Cliente.cpp" />
+		<Unit filename="src/entidades/Pago.cpp" />
 		<Unit filename="src/entidades/Persona.cpp" />
+		<Unit filename="src/entidades/Turno.cpp" />
 		<Unit filename="src/interfaz/MenuManager.cpp" />
+		<Unit filename="src/utilidades/ArchivoConfiguracion.cpp" />
 		<Unit filename="src/utilidades/Fecha.cpp" />
 		<Unit filename="src/utilidades/Hora.cpp" />
 		<Extensions />

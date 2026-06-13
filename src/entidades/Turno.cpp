@@ -60,6 +60,8 @@ bool Turno::getActivo() const{
 }
 
 
+
+
 void Turno::cargar(){
 
     int dia, mes, anio;
@@ -95,7 +97,7 @@ void Turno::cargar(){
 
     _hora.setHora(hora);
     _hora.setMinuto(minuto);
-    _hora.setSegundo(0);
+    _hora.setSegundo(0); // dejamos en 0 para redondear siempre y solo trabajamos con hora y minutos
 
     _activo = true;
 }
