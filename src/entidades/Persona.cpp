@@ -65,6 +65,7 @@ void Persona::cargar(){
     char emailAux[50];
 
     cout << "Nombre: ";
+    //cin.ignore();
     cin.getline(nombreAux, 30);
     setNombre(nombreAux);
 
