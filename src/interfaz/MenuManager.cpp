@@ -411,7 +411,7 @@ void MenuManager::MenuBarberos()const
     cout<<"1- ¨Sos un Barbero nuevo? "<<endl;
     cout<<"2- Editar Informacion de Barbero. "<<endl;
     cout<<"3- Borrar Informacion. "<<endl;
-    cout<<"4-  "<<endl;
+    cout<<"4-  Listar Barberos"<<endl;
     cout <<"-------------------------------"<<endl;
     cout << "Presionar La tecla 0 (cero) para volver";
     cout << " al menu principal"<<endl;
@@ -420,9 +420,9 @@ void MenuManager::MenuBarberos()const
 
     switch (opcion){
      case 1:  agregarBarbero(); break; // Agregar funcion crear barbero
-     case 2:break;
+     case 2:  modificarBarbero(); break;
      case 3:break;
-     case 4:break;
+     case 4: listarBarbero(); break;
     }
     system ("pause");
     system("cls");
