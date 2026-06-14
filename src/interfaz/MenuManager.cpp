@@ -8,6 +8,7 @@
 #include "MenuBarberos.h"
 #include  "MenuTurnos.h"
 #include "MenuInformes.h"
+#include "MenuPagos.h"
 
 #include "Cliente.h"
 #include "ArchivoConfiguracion.h"
@@ -41,9 +42,15 @@ rlutil::locate(27, 24);    cout<< "บ                                            
 rlutil::setColor(rlutil::BLUE);
 rlutil::locate(27, 25);    cout<< "บ                                                    บ";
 rlutil::setColor(rlutil::WHITE);
-rlutil::locate(27, 26);    cout<<"บ                                                    บ";
+rlutil::locate(27, 26); cout<<"บ                                                    บ";
 rlutil::setColor(rlutil::RED);
-rlutil::locate(27, 27);    cout<< "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+rlutil::locate(27, 27); cout<<"บ                                                    บ";
+
+rlutil::setColor(rlutil::BLUE);
+rlutil::locate(27, 28); cout<<"บ                                                    บ";
+
+rlutil::setColor(rlutil::RED);
+rlutil::locate(27, 29); cout<< "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
 
 
 rlutil::setColor(rlutil::YELLOW);
@@ -53,9 +60,9 @@ rlutil::locate(32, 22);cout << "[ 2 ] Acceder al menu  Para clientes"<<endl;
 
 rlutil::locate(32, 24);cout << "[ 3 ] Acceder al menu Barberos  "<<endl;
 
-rlutil::locate(32, 26);cout << "[ 4 ] Informes"<<endl<<endl;
+rlutil::locate(32, 26);cout << "[ 4 ] Informes"<<endl;
 
-// rlutil::locate(32, 28);cout << "[ 5 ] Creditos..."<<endl<<endl;
+rlutil::locate(32, 28); cout << "[ 5 ] Pagos" << endl;
 
 
 
@@ -92,10 +99,12 @@ case 1:  {
 
                   }
 
-          case 5: {
-               Creditos ();
-               break;
-          }
+        case 5: {
+                MenuPagos pago;
+                pago.InterfazMenuPagos();
+                break;
+                }
+
             case 0:  { system("cls");
             rlutil::setColor(rlutil::LIGHTBLUE);
             rlutil::locate(27, 5);
