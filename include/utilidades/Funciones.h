@@ -1,8 +1,8 @@
-#ifndef FUNCIONES_H_INCLUDED
-#define FUNCIONES_H_INCLUDED
+
+#pragma once
 
 void agregarBarbero();
 void modificarBarbero();
 void listarBarbero();
 
-#endif // FUNCIONES_H_INCLUDED
+
