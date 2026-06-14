@@ -7,6 +7,9 @@ using namespace std;
 #include "ArchivoConfiguracion.h"
 #include "ArchivoClientes.h"
 #include "Cliente.h"
+#include "BarberoArchivo.h"
+#include "ArchivoServicios.h"
+#include "ServiciosManager.h"
 #include <cstring>
 
 void TurnosManager::crearTurno(){
@@ -14,7 +17,6 @@ void TurnosManager::crearTurno(){
     Turno turno;
     ArchivoTurnos archivo;
     ArchivoConfiguracion config;
-
     int opcion;
 
     cout << "---- CREAR TURNO ----" << endl;
@@ -22,6 +24,7 @@ void TurnosManager::crearTurno(){
     cout << "0 - Cancelar" << endl;
     cout << "Opcion: ";
     cin >> opcion;
+    cin.ignore();
 
     if(opcion == 0){
         cout << "Operacion cancelada." << endl;
@@ -30,13 +33,34 @@ void TurnosManager::crearTurno(){
     }
 
     int nuevoId = config.getProximoIdTurno();
-    turno.setId(nuevoId);
 
-    cout << endl;
+    system("cls");
     cout << "---- CREAR TURNO ----" << endl;
 
-    turno.cargar();
+    cout << "\n=== SERVICIOS DISPONIBLES ===" << endl;
+    ServiciosManager servManager;
+    servManager.listarServicios();
+    cout << "=============================\n" << endl;
 
+    turno.cargar();
+    turno.setId(nuevoId);
+
+    ArchivoClientes arcCli;
+    BarberoArchivo arcBar("barberos.dat");
+    ArchivoServicios arcSer;
+
+    if (arcCli.buscar(turno.getIdCliente()) == -1) {
+        cout << "\n[ERROR] El ID de Cliente ingresado no existe." << endl;
+        system("pause"); return;
+    }
+    if (arcBar.buscar(turno.getIdBarbero()) == -1) {
+        cout << "\n[ERROR] El ID de Barbero ingresado no existe." << endl;
+        system("pause"); return;
+    }
+    if (arcSer.buscar(turno.getIdServicio()) == -1) {
+        cout << "\n[ERROR] El ID de Servicio ingresado no existe." << endl;
+        system("pause"); return;
+    }
     cout << endl;
     cout << "Desea guardar el turno?" << endl;
     cout << "1 - Si" << endl;
@@ -63,9 +87,6 @@ void TurnosManager::crearTurno(){
 }
 
 
-
-
-
 void TurnosManager::listarTurnos(){
 
     ArchivoTurnos archivo;
@@ -89,11 +110,6 @@ void TurnosManager::listarTurnos(){
     }
     system("pause");
 }
-
-
-
-
-// para llamar cuando queramos editar un turno o eliminar un turno
 
 int TurnosManager::buscarClientePorNombreApellido(){
 
@@ -123,8 +139,8 @@ int TurnosManager::buscarClientePorNombreApellido(){
             int comparaNombre;
             int comparaApellido;
 
-            comparaNombre = strcmp(aux.getNombre(), nombre);
-            comparaApellido = strcmp(aux.getApellido(), apellido);
+            comparaNombre = stricmp(aux.getNombre(), nombre);
+            comparaApellido = stricmp(aux.getApellido(), apellido);
 
             if(comparaNombre == 0 && comparaApellido == 0){
 
@@ -135,11 +151,6 @@ int TurnosManager::buscarClientePorNombreApellido(){
 
     return -1;
 }
-
-
-
-
-
 
 void TurnosManager::editarTurno(){
 
@@ -182,10 +193,6 @@ void TurnosManager::editarTurno(){
 
     system("pause");
 }
-
-
-
-
 
 void TurnosManager::borrarTurno(){
 

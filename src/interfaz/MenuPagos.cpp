@@ -1,11 +1,11 @@
 #include <iostream>
-using namespace std;
-
 #include "MenuPagos.h"
 #include "Logo.h"
 #include "facha.h"
 #include "PagosManager.h"
 #include "MenuManager.h"
+using namespace std;
+
 
 void MenuPagos::InterfazMenuPagos() const{
     int opcion;
@@ -15,7 +15,25 @@ void MenuPagos::InterfazMenuPagos() const{
         LogoConstante();
 
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u-P a g o s";
+        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u - P a g o s";
+        rlutil::setColor(rlutil::BLUE);
+        rlutil::locate(27, 19); cout << "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(27, 20); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::RED);
+        rlutil::locate(27, 21); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::BLUE);
+        rlutil::locate(27, 22); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(27, 23); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::RED);
+        rlutil::locate(27, 24); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::BLUE);
+        rlutil::locate(27, 25); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(27, 26); cout << "บ                                                    บ";
+        rlutil::setColor(rlutil::RED);
+        rlutil::locate(27, 27); cout << "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
 
         rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(32, 20); cout << "1- Registrar Pago" << endl;
@@ -25,7 +43,7 @@ void MenuPagos::InterfazMenuPagos() const{
 
 
         rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(32, 29); cout << "Opcion 0 (cero) Para Salir al Menu-Principal..." << endl;
+        rlutil::locate(32, 29); cout << " Opcion 0 (cero) Para Salir al Menu-Principal..." << endl;
 
         rlutil::setColor(rlutil::RED);
         rlutil::locate(32, 30); cout << "Eleccion: # ";
@@ -62,6 +80,7 @@ void MenuPagos::InterfazMenuPagos() const{
             system("cls");
             cout << "Opcion invalida. Ingresa un numero valido para acceder." << endl;
             cout << "0 (cero) para volver al menu principal." << endl;
+            cout << endl << endl;
             system("pause");
             system("cls");
             break;

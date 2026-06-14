@@ -7,21 +7,21 @@ private:
     std::string _nombreArchivo;
 
 public:
-ArchivoTurnos();
-ArchivoTurnos(std::string nombreArchivo);
+    ArchivoTurnos();
+    ArchivoTurnos(std::string nombreArchivo);
 
-// Dar de alta
-bool guardar(Turno reg);
+    // Dar de alta Turnos
+    bool guardar(Turno reg);
 
-// Modificacion/Baja
-bool guardar(Turno reg, int pos);
+    // Modificacion/Baja de Turnos
+    bool guardar(Turno reg, int pos);
 
-// Leer
-Turno leer(int pos);
+    // Leer Turnos
+    Turno leer(int pos);
 
-// Buscar por ID
-int buscar(int idTurno);
+    // Buscar Turnos por ID
+    int buscar(int idTurno);
 
-// Medimos el tamaño
-int cantidadRegistros();
+    // Cantidad de registros guardados
+    int cantidadRegistros();
 };
