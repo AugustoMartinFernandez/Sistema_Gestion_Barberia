@@ -10,14 +10,18 @@ public:
     ArchivoTurnos();
     ArchivoTurnos(std::string nombreArchivo);
 
-// Dar de alta Clientes
-bool guardar(Turno reg);
-// Modificacion/Baja de Clientes
-bool guardar(Turno reg, int pos);
-// Leer Clientes
-Turno leer(int pos);
-// Buscar Clientes por ID
-int buscar(int idTurno);
-// Medimos el tamaño del cliente
-}
+    // Dar de alta Turnos
+    bool guardar(Turno reg);
 
+    // Modificacion/Baja de Turnos
+    bool guardar(Turno reg, int pos);
+
+    // Leer Turnos
+    Turno leer(int pos);
+
+    // Buscar Turnos por ID
+    int buscar(int idTurno);
+
+    // Cantidad de registros guardados
+    int cantidadRegistros();
+};

@@ -88,29 +88,6 @@ void Turno::cargar(){
         cin >> _idServicio;
     }
 
-    cout << "Dia: ";
-    cin >> dia;
-
-    cout << "Mes: ";
-    cin >> mes;
-
-    cout << "Anio: ";
-    cin >> anio;
-
-    _fecha.setDia(dia);
-    _fecha.setMes(mes);
-    _fecha.setAnio(anio);
-
-    cout << "Hora: ";
-    cin >> hora;
-
-    cout << "Minutos: ";
-    cin >> minuto;
-
-    _hora.setHora(hora);
-    _hora.setMinuto(minuto);
-    _hora.setSegundo(0); // dejamos en 0 para redondear siempre y solo trabajamos con hora y minutos
-
     do {
         cout << "Dia: ";
         cin >> dia;
@@ -136,7 +113,7 @@ void Turno::cargar(){
 
         _hora.setHora(hora);
         _hora.setMinuto(minuto);
-        _hora.setSegundo(0);
+        _hora.setSegundo(0); // dejamos en 0 para redondear
 
         if(_hora.esValida() == false){
              cout << "Hora Invalida. Intente nuevamente." << endl;
