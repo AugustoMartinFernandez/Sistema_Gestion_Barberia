@@ -70,9 +70,6 @@ void Pago::cargar(){
 
     char metodoAux[20];
 
-    cout << "ID Turno: ";
-    cin >> _idTurno;
-
     cin.ignore();
 
     cout << "Metodo de pago: ";
@@ -84,6 +81,8 @@ void Pago::cargar(){
 
     _activo = true;
 }
+
+
 
 void Pago::mostrar() const{
 

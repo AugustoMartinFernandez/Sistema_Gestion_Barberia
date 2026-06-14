@@ -4,11 +4,7 @@ using namespace std;
 #include "MenuManager.h"
 #include "Logo.h"
 #include "facha.h"
-#include "Turno.h"
-#include "ArchivoTurnos.h"
-#include "ArchivoClientes.h"
-#include "BarberoArchivo.h"
-#include "ArchivoConfiguracion.h"
+#include "TurnosManager.h" // Importamos la nueva logica del equipo
 
 void MenuTurnos::InterfazMenuTurnos () const {
     int opcion;
@@ -40,6 +36,7 @@ void MenuTurnos::InterfazMenuTurnos () const {
         rlutil::locate(32, 20); cout << "1- Crear Turno" << endl;
         rlutil::locate(32, 22); cout << "2- Editar Turno" << endl;
         rlutil::locate(32, 24); cout << "3- Borrar Turno Programado" << endl;
+        rlutil::locate(32, 26); cout << "4- Listar Turnos" << endl;
 
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(32, 29); cout << " Opcion 0 (cero) Para Salir al Menu-Principal..." << endl;
@@ -51,50 +48,32 @@ void MenuTurnos::InterfazMenuTurnos () const {
             case 1: CrearTurno(); break;
             case 2: EditarTurno(); break;
             case 3: BorrarTurno(); break;
+            case 4: ListarTurnos(); break;
             case 0: break;
-            default: cout << "Opcion invalida."; system("pause");
+            default:
+                cout << "Opcion invalida." << endl;
+                system("pause");
         }
     } while (opcion != 0);
 }
 
+// Delegamos la funcionalidad al nuevo TurnosManager creado por los chicos
 void MenuTurnos::CrearTurno() const {
-    cout << endl << "--- AGENDAR NUEVO TURNO ---" << endl;
-    Turno t;
-    t.cargar(); // Pide datos de cliente, barbero, servicio, fecha y hora
-
-    // 1. Validar existencia de Cliente
-    ArchivoClientes arcCli;
-    if (arcCli.buscar(t.getIdCliente()) == -1) {
-        cout << "\n[ERROR] El ID de Cliente ingresado no existe." << endl;
-        system("pause"); return;
-    }
-
-    // 2. Validar existencia de Barbero
-    BarberoArchivo arcBar;
-    if (arcBar.buscar(t.getIdBarbero()) == -1) {
-        cout << "\n[ERROR] El ID de Barbero ingresado no existe." << endl;
-        system("pause"); return;
-    }
-
-    // 3. Asignar ID autoincremental y guardar
-    ArchivoConfiguracion config;
-    t.setId(config.getProximoIdTurno());
-
-    ArchivoTurnos arcTurno;
-    if (arcTurno.guardar(t)) {
-        cout << "\n[EXITO] Turno agendado con ID: " << t.getId() << endl;
-    } else {
-        cout << "\n[ERROR] No se pudo guardar el turno." << endl;
-    }
-    system("pause");
+    TurnosManager manager;
+    manager.crearTurno();
 }
 
 void MenuTurnos::EditarTurno() const {
-    cout << "Funcionalidad de Edicion en desarrollo..." << endl;
-    system("pause");
+    TurnosManager manager;
+    manager.editarTurno();
 }
 
 void MenuTurnos::BorrarTurno() const {
-    cout << "Funcionalidad de Borrado en desarrollo..." << endl;
-    system("pause");
+    TurnosManager manager;
+    manager.borrarTurno();
+}
+
+void MenuTurnos::ListarTurnos() const {
+    TurnosManager manager;
+    manager.listarTurnos();
 }
