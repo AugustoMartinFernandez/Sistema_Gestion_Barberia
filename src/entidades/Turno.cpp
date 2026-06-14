@@ -60,6 +60,8 @@ bool Turno::getActivo() const{
 }
 
 
+
+
 void Turno::cargar(){
 
     int dia, mes, anio;
@@ -98,10 +100,11 @@ void Turno::cargar(){
         _fecha.setMes(mes);
         _fecha.setAnio(anio);
 
-        if(_fecha.esValida() == false){
-            cout << "Fecha Invalida. Intente nuevamente." << endl;
+        if(!_fecha.esValida()){
+            cout << "Fecha invalida. Intente nuevamente." << endl;
         }
-    } while(_fecha.esValida() == false);
+
+    } while(!_fecha.esValida());
 
     do {
         cout << "Hora: ";
@@ -113,29 +116,40 @@ void Turno::cargar(){
         _hora.setMinuto(minuto);
         _hora.setSegundo(0);
 
-        if(_hora.esValida() == false){
-             cout << "Hora Invalida. Intente nuevamente." << endl;
+        if(!_hora.esValida()){
+            cout << "Hora invalida. Intente nuevamente." << endl;
         }
-    } while (_hora.esValida() == false);
 
-    // Si todo sale ok, asignamos al Turno como activo.
+    } while(!_hora.esValida());
+
     _activo = true;
-    // Agregamos esto para limpiar lo que ingresamos durante la carga
-    cin.ignore();
 }
+
+
 
 void Turno::mostrar() const{
 
+    cout << "ID Turno: " << _id << endl;
+    cout << "ID Cliente: " << _idCliente << endl;
+    cout << "ID Barbero: " << _idBarbero << endl;
+    cout << "ID Servicio: " << _idServicio << endl;
+    cout << "-------------------" << endl;
+
+    cout << "Fecha: ";
+    _fecha.toString();
+    cout << endl;
+
+    cout << "Hora: ";
+    _hora.toString();
+    cout << endl;
+
+    cout << "Estado: ";
     if(_activo){
-
-        cout << "ID Turno: " << _id << endl;
-        cout << "ID Cliente: " << _idCliente << endl;
-        cout << "ID Barbero: " << _idBarbero << endl;
-        cout << "ID Servicio: " << _idServicio << endl;
-        cout << "Fecha: " << _fecha.toString() << endl;
-        cout << "Hora: " << _hora.toString() << endl;
-
-        cout << "-------------------------" << endl;
+        cout << "Activo";
+    }
+    else{
+        cout << "Cancelado";
     }
 
+    cout << endl;
 }

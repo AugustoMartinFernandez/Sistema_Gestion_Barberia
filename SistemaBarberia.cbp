@@ -45,8 +45,10 @@
 		<Unit filename="include/entidades/Barbero.h" />
 		<Unit filename="include/entidades/BarberoArchivo.h" />
 		<Unit filename="include/entidades/Cliente.h" />
+		<Unit filename="include/entidades/Pago.h" />
 		<Unit filename="include/entidades/Persona.h" />
 		<Unit filename="include/entidades/Turno.h" />
+		<Unit filename="include/interfaz/MenuManager.h" />
 		<Unit filename="include/interfaz/Logo.h" />
 		<Unit filename="include/interfaz/MenuBarberos.h" />
 		<Unit filename="include/interfaz/MenuCliente.h" />
@@ -63,8 +65,10 @@
 		<Unit filename="src/entidades/Barbero.cpp" />
 		<Unit filename="src/entidades/BarberoArchivo.cpp" />
 		<Unit filename="src/entidades/Cliente.cpp" />
+		<Unit filename="src/entidades/Pago.cpp" />
 		<Unit filename="src/entidades/Persona.cpp" />
 		<Unit filename="src/entidades/Turno.cpp" />
+		<Unit filename="src/interfaz/MenuManager.cpp" />
 		<Unit filename="src/interfaz/Logo.cpp" />
 		<Unit filename="src/interfaz/MenuBarberos.cpp" />
 		<Unit filename="src/interfaz/MenuCliente.cpp" />
