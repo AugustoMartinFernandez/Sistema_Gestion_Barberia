@@ -20,7 +20,7 @@ void MenuCliente::InterfazMenuCliente () const
         LogoConstante ();   //logo por defecto , aparece en todos los menuss(barberia pacheco)
         rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(27, 18);
-        cout<< " E s t a s  e n:  M e n u - C l i e n t e s";
+        cout<< " E s t a s  e n:  M e n u   C l i e n t e s";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19);
         cout<< "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";
@@ -164,7 +164,7 @@ void MenuCliente::Dardebaja_Reactivarcliente() const
     LogoConstante ();
     rlutil::setColor(rlutil::YELLOW);
     rlutil::locate(27, 18);
-    cout<< " E s t a s  e n:  S u b M e n u - E s t a d o  C l i e n t e s";
+    cout<< " E s t a s  e n:  S u b m e n u - E s t a d o  C l i e n t e s";
     rlutil::setColor(rlutil::BLUE);
     rlutil::locate(27, 19);
     cout<< "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";

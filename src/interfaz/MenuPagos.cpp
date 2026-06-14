@@ -15,7 +15,7 @@ void MenuPagos::InterfazMenuPagos() const{
         LogoConstante();
 
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u - P a g o s";
+        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u   P a g o s";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19); cout << "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";
         rlutil::setColor(rlutil::WHITE);

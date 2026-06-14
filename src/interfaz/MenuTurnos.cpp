@@ -12,7 +12,7 @@ void MenuTurnos::InterfazMenuTurnos () const {
         system("cls");
         LogoConstante();
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u - T u r n o s";
+        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u   T u r n o s";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19); cout << "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";
         rlutil::setColor(rlutil::WHITE);

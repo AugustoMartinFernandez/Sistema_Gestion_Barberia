@@ -17,7 +17,7 @@ void MenuManager::MenuPrincipal () const {
         system("cls");
         LogoConstante();
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u - P r i n c i p a l";
+        rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u   P r i n c i p a l";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19); cout<< "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";
         rlutil::setColor(rlutil::WHITE);
@@ -75,5 +75,5 @@ void MenuManager::MenuPrincipal () const {
 }
 
 void MenuManager::Creditos() const {
-    cout << "Sistema gestion Barberia - Equipo 2026";
+    cout << "Sistema gestion Barberia - Equipo 42 TUP 2026"<< endl;
 }
