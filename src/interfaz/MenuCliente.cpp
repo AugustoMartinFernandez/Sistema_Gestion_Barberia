@@ -423,9 +423,10 @@ rlutil::locate(27,21);   cout<<"藩様様様様様様様様様様様様様様様様様様様様様様様
                     }
                    }
                    if(hayClientesObjetivo == false){
+                         rlutil::setColor(rlutil::WHITE);
                     cout << "\nNo hay clientes dados de baja en el sistema para reactivar." << endl;
                    }else{
-//// _________________      _____________  _____________  _____________  _____________
+
                         system ("cls");
                         LogoConstante ();
       rlutil::setColor(rlutil::WHITE);

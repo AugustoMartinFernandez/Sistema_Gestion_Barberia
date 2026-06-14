@@ -7,5 +7,6 @@ class MenuBarbero {
 
     void BarberoNuevo()const;
     void EditarInformacion()const;
-    void BorrarInformacion()const;
+   //  void BorrarInformacion()const;
+    void ListarBarberos ()const ;
 };
