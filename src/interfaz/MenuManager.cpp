@@ -6,7 +6,8 @@
 #include "MenuBarberos.h"
 #include "MenuTurnos.h"
 #include "MenuInformes.h"
-#include "MenuPagos.h" // Integración de pagos
+#include "MenuPagos.h"
+#include "MenuServicios.h"
 
 using namespace std;
 
@@ -46,6 +47,7 @@ void MenuManager::MenuPrincipal () const {
         rlutil::locate(32, 24); cout << "[ 3 ] Acceder al menu Barberos" << endl;
         rlutil::locate(32, 26); cout << "[ 4 ] Informes" << endl;
         rlutil::locate(32, 28); cout << "[ 5 ] Pagos" << endl;
+        rlutil::locate(32, 30); cout << "[ 6 ] Servicios" << endl;
 
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(32, 30); cout << " Opcion 0 (cero) Para Salir..." << endl;
@@ -58,6 +60,7 @@ void MenuManager::MenuPrincipal () const {
             case 3: { MenuBarbero barbe; barbe.InterfazMenuBarbero(); break; }
             case 4: { MenuInformes infor; infor.InterfazMenuinformes(); break; }
             case 5: { MenuPagos pago; pago.InterfazMenuPagos(); break; }
+            case 6: { MenuServicios servi; servi.InterfazMenuServicios(); break; }
             case 0: {
                 system("cls");
                 cout << "Gracias por utilizar el programa..." << endl;

@@ -69,9 +69,6 @@ bool Pago::getActivo() const{
 void Pago::cargar(){
 
     char metodoAux[20];
-
-    cin.ignore();
-
     cout << "Metodo de pago: ";
     cin.getline(metodoAux, 20);
     setMetodoPago(metodoAux);

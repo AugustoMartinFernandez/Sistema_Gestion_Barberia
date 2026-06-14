@@ -5,22 +5,22 @@ using namespace std;
 #include "ArchivoPagos.h"
 #include "ArchivoTurnos.h"
 #include "ArchivoConfiguracion.h"
-
-
-
+#include "ArchivoServicios.h"
+#include "Servicio.h"
 
 void PagosManager::registrarPago(){
 
     ArchivoPagos archivoPagos;
     ArchivoTurnos archivoTurnos;
     ArchivoConfiguracion config;
+    ArchivoServicios archivoServicios;
 
     Pago pago;
     int idTurno;
 
     cout << "---- REGISTRAR PAGO ----" << endl;
 
-    cout << "Ingrese ID del turno: ";
+    cout << "Ingrese ID del turno a cobrar: ";
     cin >> idTurno;
 
     int posTurno = archivoTurnos.buscar(idTurno);
@@ -39,19 +39,37 @@ void PagosManager::registrarPago(){
         return;
     }
 
+    // Cobro
+    Turno turnoRealizado = archivoTurnos.leer(posTurno);
+    if (turnoRealizado.getActivo() == false) {
+        cout << "No se puede cobrar un turno anulado." << endl;
+        system("pause");
+        return;
+    }
+
+    int posServicio = archivoServicios.buscar(turnoRealizado.getIdServicio());
+
+    if(posServicio == -1){
+        cout << "El servicio asociado a este turno ya no existe en archivo." << endl;
+        system("pause");
+        return;
+    }
+
+    Servicio servicioBrindado = archivoServicios.leer(posServicio);
+    float montoAutocalculado = servicioBrindado.getPrecio();
+
+    cout << "\nServicio realizado: " << servicioBrindado.getDescripcion() << endl;
+    cout << "Monto a cobrar (Precio Oficial): $" << montoAutocalculado << endl << endl;
+
     int nuevoId = config.getProximoIdPago();
 
     pago.setId(nuevoId);
     pago.setIdTurno(idTurno);
 
-
-    //hasta conectar con Servicio
-    float monto;
-    cout << "Ingrese monto a pagar: $";
-    cin >> monto;
-    pago.setMonto(monto);
-
-    pago.cargar();
+    // el precio automaticamente
+    pago.setMonto(montoAutocalculado);
+    cin.ignore();
+    pago.cargar(); // Aca la clase Pago solo pide el metodo de pago, fecha y hora.
 
     if(archivoPagos.guardar(pago)){
         cout << endl;
@@ -64,9 +82,6 @@ void PagosManager::registrarPago(){
 
     system("pause");
 }
-
-
-
 
 
 void PagosManager::listarPagos(){
@@ -93,10 +108,6 @@ void PagosManager::listarPagos(){
 
     system("pause");
 }
-
-
-
-
 
 
 void PagosManager::buscarPago(){
@@ -127,10 +138,6 @@ void PagosManager::buscarPago(){
 
     system("pause");
 }
-
-
-
-
 
 
 

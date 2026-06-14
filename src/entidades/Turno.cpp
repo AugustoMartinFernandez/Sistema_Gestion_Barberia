@@ -125,8 +125,6 @@ void Turno::cargar(){
     _activo = true;
 }
 
-
-
 void Turno::mostrar() const{
 
     cout << "ID Turno: " << _id << endl;
@@ -135,13 +133,9 @@ void Turno::mostrar() const{
     cout << "ID Servicio: " << _idServicio << endl;
     cout << "-------------------" << endl;
 
-    cout << "Fecha: ";
-    _fecha.toString();
-    cout << endl;
+    cout << "Fecha: " << _fecha.toString() << endl;
 
-    cout << "Hora: ";
-    _hora.toString();
-    cout << endl;
+    cout << "Hora: " << _hora.toString() << endl;
 
     cout << "Estado: ";
     if(_activo){
