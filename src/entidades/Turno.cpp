@@ -131,8 +131,6 @@ void Turno::mostrar() const{
     cout << "ID Cliente: " << _idCliente << endl;
     cout << "ID Barbero: " << _idBarbero << endl;
     cout << "ID Servicio: " << _idServicio << endl;
-    cout << "-------------------" << endl;
-
     cout << "Fecha: " << _fecha.toString() << endl;
 
     cout << "Hora: " << _hora.toString() << endl;
@@ -144,6 +142,7 @@ void Turno::mostrar() const{
     else{
         cout << "Cancelado";
     }
+    cout << "-------------------" << endl;
 
     cout << endl;
 }

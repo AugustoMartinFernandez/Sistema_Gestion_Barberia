@@ -50,7 +50,7 @@ void MenuManager::MenuPrincipal () const {
         rlutil::locate(32, 30); cout << "[ 6 ] Servicios" << endl;
 
         rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(32, 30); cout << " Opcion 0 (cero) Para Salir..." << endl;
+        rlutil::locate(32, 32); cout << " Opcion 0 (cero) Para Salir..." << endl;
         rlutil::setColor(rlutil::RED); rlutil::locate(32, 31); cout << "Eleccion: # ";
         rlutil::setColor(rlutil::BLUE); cin >> opcion;
 

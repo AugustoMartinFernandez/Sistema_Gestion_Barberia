@@ -48,11 +48,11 @@ bool Servicio::getActivo() const {
 void Servicio::cargar() {
     char descAux[50];
 
-    cout << "Descripcion del servicio (ej. Corte Clasico): ";
+    cout << endl << "Descripcion del servicio (ej. Corte Clasico): ";
     cin.getline(descAux, 50);
     setDescripcion(descAux);
 
-    cout << "Precio del servicio: $";
+    cout << endl << "Precio del servicio: $";
     cin >> _precio;
 
     _activo = true;

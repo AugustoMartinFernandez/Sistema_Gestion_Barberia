@@ -240,7 +240,7 @@ void BarberosManager::listarBarberos() const {
     int total = reg.cantidadRegistros();
     bool hayBarberosActivos = false;
 
-    cout << "---- LISTADO DE BARBEROS ----" << endl;
+    cout << endl << "---- LISTADO DE BARBEROS ----" << endl;
 
     if(total > 0) {
         for(int i = 0; i < total; i++) {
