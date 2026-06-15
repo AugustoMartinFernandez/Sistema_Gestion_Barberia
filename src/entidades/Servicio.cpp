@@ -10,6 +10,7 @@ Servicio::Servicio() {
     strcpy(_descripcion, "Sin descripcion");
     _precio = 0.0f;
     _activo = false;
+    _puntosQueOtorga = 0;
 }
 
 void Servicio::setId(int id) {
@@ -28,6 +29,9 @@ void Servicio::setPrecio(float precio) {
 void Servicio::setActivo(bool activo) {
     _activo = activo;
 }
+void Servicio::setPuntosQueOtorga(int puntos) {
+    _puntosQueOtorga = puntos;
+}
 
 int Servicio::getId() const {
     return _id;
@@ -44,6 +48,9 @@ float Servicio::getPrecio() const {
 bool Servicio::getActivo() const {
     return _activo;
 }
+int Servicio::getPuntosQueOtorga() const {
+    return _puntosQueOtorga;
+}
 
 void Servicio::cargar() {
     char descAux[50];
@@ -55,6 +62,9 @@ void Servicio::cargar() {
     cout << "Precio del servicio: $";
     cin >> _precio;
 
+    cout << "Puntos que otorga: ";
+    cin >> _puntosQueOtorga;
+
     _activo = true;
 }
 
@@ -63,6 +73,7 @@ void Servicio::mostrar() const {
         cout << "ID Servicio: " << _id << endl;
         cout << "Descripcion: " << _descripcion << endl;
         cout << "Precio     : $" << _precio << endl;
+        cout << "Puntos     : +" << _puntosQueOtorga << " pts" << endl;
         cout << "-------------------------" << endl;
     }
 }
