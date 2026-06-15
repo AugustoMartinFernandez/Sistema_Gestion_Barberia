@@ -14,7 +14,7 @@ void MenuServicios::InterfazMenuServicios() const {
         system("cls");
         LogoConstante();
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u - S e r v i c i o s";
+        rlutil::locate(27, 18); cout << " E s t a s  e n:  M e n u   S e r v i c i o s";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19); cout << "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";
         rlutil::setColor(rlutil::WHITE);
@@ -118,7 +118,7 @@ void MenuServicios::GestionarEstado() const {
     system("cls");
     LogoConstante();
     rlutil::setColor(rlutil::YELLOW);
-    rlutil::locate(27, 18); cout << " E s t a s  e n:  S u b M e n u - E s t a d o  S e r v.";
+    rlutil::locate(27, 18); cout << " E s t a s  e n:  S u b m e n u - E s t a d o  S e r v.";
     rlutil::setColor(rlutil::BLUE);
     rlutil::locate(27, 19); cout << "浜様様様様様様様様様様様様様様様様様様様様様様様様様融";
     rlutil::setColor(rlutil::WHITE);

@@ -88,6 +88,6 @@ cout<< R"(
       =================================================================================
     )"<<endl;
 
-    rlutil::anykey("Cargando Sistema ...");// presiona una tecla para continuar
+    rlutil::anykey("Presione una tecla para iniciar el programa...");// presiona una tecla para continuar
     system("cls"); // limpia pantalla ;
 }

@@ -13,7 +13,7 @@ void MenuBarbero::InterfazMenuBarbero () const {
         system("cls");
         LogoConstante ();
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u - B a r b e r o s";
+        rlutil::locate(27, 18); cout<< " E s t a s  e n:  M e n u   B a r b e r o s";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19); cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
         rlutil::setColor(rlutil::WHITE);
@@ -34,13 +34,13 @@ void MenuBarbero::InterfazMenuBarbero () const {
         rlutil::locate(27, 27); cout<<  "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
 
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(32, 20); cout<<"1- ฟSos un Barbero nuevo? " << endl;
+        rlutil::locate(32, 20); cout<<"1- Cargar nuevo barbero " << endl;
         rlutil::locate(32, 22); cout<<"2- Editar Informacion de Barbero. " << endl;
         rlutil::locate(32, 24); cout<<"3- Dar de baja / Reactivar barbero " << endl;
         rlutil::locate(32, 26); cout<<"4- Lista de Barberos. " << endl;
 
         rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(32, 29); cout<< " Opcion 0 (cero) Para Salir Del Programa..." << endl;
+        rlutil::locate(32, 29); cout<< " Presione 0 (cero) para volver" << endl;
         rlutil::setColor(rlutil::RED);  rlutil::locate(32, 30); cout<< "Eleccion: #  ";
         rlutil::setColor(rlutil::BLUE);
         cin >> opcion;
@@ -117,7 +117,7 @@ void MenuBarbero::GestionarEstado() const {
     system ("cls");
     LogoConstante ();
     rlutil::setColor(rlutil::YELLOW);
-    rlutil::locate(27, 18); cout<< " E s t a s  e n:  S u b M e n u - E s t a d o  B a r b e r o";
+    rlutil::locate(27, 18); cout<< " E s t a s  e n:  S u b m e n u - E s t a d o  B a r b e r o";
     rlutil::setColor(rlutil::BLUE);
     rlutil::locate(27, 19); cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
     rlutil::setColor(rlutil::WHITE);
