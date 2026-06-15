@@ -4,8 +4,35 @@
 using namespace std;
 
 Cliente::Cliente() {
-    // No hace falta poner nada aca adentro por ahora.
-    // Al instanciar un Cliente , heredamos el constructor de Persona
+    _puntosAcumulados = 0;
+}
+
+void Cliente::setPuntosAcumulados(int puntos) {
+    if (puntos >= 0) {
+        _puntosAcumulados = puntos;
+    } else {
+        _puntosAcumulados = 0;
+    }
+}
+
+int Cliente::getPuntosAcumulados() const {
+    return _puntosAcumulados;
+}
+
+void Cliente::sumarPuntos(int puntos) {
+    if (puntos > 0) {
+        _puntosAcumulados += puntos;
+    }
+}
+
+void Cliente::restarPuntos(int puntos) {
+    if (puntos > 0) {
+        _puntosAcumulados -= puntos;
+        // Nunca puede quedar en negativo
+        if (_puntosAcumulados < 0) {
+            _puntosAcumulados = 0;
+        }
+    }
 }
 
 void Cliente::cargar() {
@@ -13,9 +40,9 @@ void Cliente::cargar() {
 }
 
 void Cliente::mostrar() const {
-    // VERIFICO QUE SE MUESTREN SOLO CLIENTES ACTIVOS
     if (_activo) {
         Persona::mostrar();
+        cout << "Puntos Acumulados: " << _puntosAcumulados << " pts" << endl;
         cout << "-------------------------" << endl;
     }
 }
