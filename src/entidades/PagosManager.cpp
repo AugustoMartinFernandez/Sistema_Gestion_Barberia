@@ -15,6 +15,7 @@ void PagosManager::registrarPago(){
     ArchivoTurnos archivoTurnos;
     ArchivoConfiguracion config;
     ArchivoServicios archivoServicios;
+    ArchivoClientes archivoClientes;
 
     Pago pago;
     int idTurno;
@@ -47,8 +48,9 @@ void PagosManager::registrarPago(){
         return;
     }
 
-    // Cobro
     Turno turnoRealizado = archivoTurnos.leer(posTurno);
+
+    // Cláusula de guarda que agregamos antes: Turno anulado
     if (turnoRealizado.getActivo() == false) {
         cout << "No se puede cobrar un turno anulado." << endl;
         system("pause");
@@ -64,24 +66,53 @@ void PagosManager::registrarPago(){
     }
 
     Servicio servicioBrindado = archivoServicios.leer(posServicio);
-    float montoAutocalculado = servicioBrindado.getPrecio();
+
+    // Obtenemos al cliente para evaluar sus puntos
+    int posCliente = archivoClientes.buscar(turnoRealizado.getIdCliente());
+    Cliente clienteRealizado = archivoClientes.leer(posCliente);
+
+    float montoFinal = servicioBrindado.getPrecio();
+    int puntosServicio = servicioBrindado.getPuntosQueOtorga();
+    bool esCanje = false;
+
+    // Logica de canje
+    if (clienteRealizado.getPuntosAcumulados() >= 10) {
+        int opcionCanje;
+        cout << "\nEl cliente tiene " << clienteRealizado.getPuntosAcumulados() << " puntos acumulados." << endl;
+        cout << "Desea canjear 10 puntos por este servicio GRATIS? (1-Si, 0-No): ";
+        cin >> opcionCanje;
+
+        if (opcionCanje == 1) {
+            esCanje = true;
+            montoFinal = 0; // El servicio sale gratis
+        }
+    }
 
     cout << "\nServicio realizado: " << servicioBrindado.getDescripcion() << endl;
-    cout << "Monto a cobrar (Precio Oficial): $" << montoAutocalculado << endl << endl;
+    cout << "Monto a cobrar: $" << montoFinal << endl << endl;
 
     int nuevoId = config.getProximoIdPago();
 
     pago.setId(nuevoId);
     pago.setIdTurno(idTurno);
+    pago.setMonto(montoFinal);
 
-    // el precio automaticamente
-    pago.setMonto(montoAutocalculado);
     cin.ignore();
-    pago.cargar(); // Aca la clase Pago solo pide el metodo de pago, fecha y hora.
+    pago.cargar();
 
     if(archivoPagos.guardar(pago)){
         cout << endl;
         cout << "Pago guardado correctamente con ID: " << nuevoId << endl;
+
+        // ACTUALIZACION DE PUNTOS EN EL ARCHIVO DEL CLIENTE
+        if (esCanje) {
+            clienteRealizado.restarPuntos(10);
+            cout << "Se restaron 10 puntos por el canje." << endl;
+        } else {
+            clienteRealizado.sumarPuntos(puntosServicio);
+            cout << "El cliente ha ganado " << puntosServicio << " puntos." << endl;
+        }
+        archivoClientes.guardar(clienteRealizado, posCliente);
     }
     else{
         cout << endl;
@@ -90,7 +121,6 @@ void PagosManager::registrarPago(){
 
     system("pause");
 }
-
 
 void PagosManager::listarPagos(){
 
@@ -168,10 +198,38 @@ void PagosManager::anularPago(){
 
     Pago pago = archivo.leer(pos);
 
+    if (pago.getActivo() == false) {
+        cout << "Este pago ya se encuentra anulado." << endl;
+        system("pause");
+        return;
+    }
+
     pago.setActivo(false);
 
     if(archivo.guardar(pago, pos)){
         cout << "Pago anulado correctamente." << endl;
+
+        // Retroceso de puntos por anulacion
+        ArchivoTurnos archivoTurnos;
+        ArchivoServicios archivoServicios;
+        ArchivoClientes archivoClientes;
+
+        Turno turnoAsociado = archivoTurnos.leer(archivoTurnos.buscar(pago.getIdTurno()));
+        int posCliente = archivoClientes.buscar(turnoAsociado.getIdCliente());
+        Cliente clienteAsociado = archivoClientes.leer(posCliente);
+
+        if (pago.getMonto() == 0) {
+            // Era un canje. Al anular, le devolvemos sus 10 puntos
+            clienteAsociado.sumarPuntos(10);
+            cout << "Se devolvieron 10 puntos al cliente." << endl;
+        } else {
+            // Era un pago normal. Al anular, le restamos los puntos que habia ganado
+            Servicio servicioAsociado = archivoServicios.leer(archivoServicios.buscar(turnoAsociado.getIdServicio()));
+            clienteAsociado.restarPuntos(servicioAsociado.getPuntosQueOtorga());
+            cout << "Se restaron los puntos otorgados por este pago." << endl;
+        }
+
+        archivoClientes.guardar(clienteAsociado, posCliente);
     }
     else{
         cout << "Error al anular el pago." << endl;

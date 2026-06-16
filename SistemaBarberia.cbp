@@ -68,7 +68,6 @@
 		<Unit filename="include/interfaz/rlutil.h" />
 		<Unit filename="include/utilidades/ArchivoConfiguracion.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
-		<Unit filename="include/utilidades/Funciones.h" />
 		<Unit filename="include/utilidades/Hora.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/entidades/ArchivoClientes.cpp" />
@@ -97,7 +96,6 @@
 		<Unit filename="src/interfaz/MenuTurnos.cpp" />
 		<Unit filename="src/utilidades/ArchivoConfiguracion.cpp" />
 		<Unit filename="src/utilidades/Fecha.cpp" />
-		<Unit filename="src/utilidades/Funciones.cpp" />
 		<Unit filename="src/utilidades/Hora.cpp" />
 		<Extensions />
 	</Project>

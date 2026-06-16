@@ -67,11 +67,15 @@ bool Pago::getActivo() const{
 
 
 void Pago::cargar(){
-
+    if (_monto == 0) {
+        setMetodoPago("Canje Puntos");
+        cout << "Metodo de pago: Canje Puntos" << endl;
+    } else {
     char metodoAux[20];
     cout << "Metodo de pago: ";
     cin.getline(metodoAux, 20);
     setMetodoPago(metodoAux);
+    }
 
     _fechaPago.setCurrentDate();
     _horaPago.setCurrentTime();
