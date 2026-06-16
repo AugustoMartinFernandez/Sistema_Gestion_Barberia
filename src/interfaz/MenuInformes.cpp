@@ -5,6 +5,21 @@
 #include "facha.h"
 #include "Servicio.h"
 #include "ArchivoServicios.h"
+#include "ArchivoClientes.h"
+#include "Cliente.h"
+#include "ArchivoTurnos.h"
+#include "Turno.h"
+#include "ArchivoPagos.h"
+#include "Pago.h"
+#include "BarberoArchivo.h"
+#include "Barbero.h"
+using namespace std;
+
+struct conteoClientes {
+    int idCliente;
+    int cantidadVisitas;
+};
+
 #include "InformesManager.h"
 
 using namespace std;
@@ -22,31 +37,31 @@ void MenuInformes::InterfazMenuinformes() const
         cout<< " E s t a s  e n:  M e n u   I n f o r m e s";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19);
-        cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
+        cout<< "Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 20);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 21);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 22);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 23);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 24);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 25);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 26);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 27);
-        cout<<  "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
+        cout<<  "ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼";
 
         rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(32, 21);
@@ -110,31 +125,31 @@ void  MenuInformes::InformesFinancieros() const
         cout<< " E s t a s  e n:  S u b M e n u - I n f . F i n a n c i e r o s ";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19);
-        cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
+        cout<< "Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 20);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 21);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 22);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 23);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 24);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 25);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 26);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 27);
-        cout<<  "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
+        cout<<  "ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼";
 
         rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(32, 20);
@@ -158,6 +173,21 @@ void  MenuInformes::InformesFinancieros() const
 
         switch (opcion)
         {
+case 1:
+{
+    int opcionRec;
+    InformesManager manager;
+
+    cout << "---- RECAUDACION ----" << endl;
+    cout << "1 - Recaudacion por dia" << endl;
+    cout << "2 - Recaudacion por mes" << endl;
+    cout << "3 - Recaudacion por anio" << endl;
+    cout << "0 - Volver" << endl;
+    cout << "Opcion: ";
+    cin >> opcionRec;
+
+    switch(opcionRec)
+    {
         case 1:
         {
             int opcionRec;
@@ -198,7 +228,24 @@ void  MenuInformes::InformesFinancieros() const
                 }
             } while (opcionRec != 0);
 
-        } break;
+        case 2:
+            manager.recaudacionPorMes();
+            break;
+
+        case 3:
+            manager.recaudacionPorAnio();
+            break;
+
+        case 0:
+            break;
+
+        default:
+            cout << "Opcion invalida." << endl;
+            system("pause");
+            break;
+    }
+
+} break;
 
         case 2:
         {
@@ -278,31 +325,31 @@ void MenuInformes::InformesGestionClientes ()const
         cout<< " E s t a s  e n:  S u b M e n u - I n f . G e s t i o n C l i e n t";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 19);
-        cout<< "ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»";
+        cout<< "Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 20);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 21);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 22);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 23);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 24);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::BLUE);
         rlutil::locate(27, 25);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(27, 26);
-        cout<< "º                                                    º";
+        cout<< "Âº                                                    Âº";
         rlutil::setColor(rlutil::RED);
         rlutil::locate(27, 27);
-        cout<<  "ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼";
+        cout<<  "ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼";
 
         rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(32, 20);
