@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+#include <cstring>
 #include "MenuInformes.h"
 #include "Logo.h"
 #include "MenuManager.h"
@@ -12,6 +12,9 @@ using namespace std;
 #include "Turno.h"
 #include "ArchivoPagos.h"
 #include "Pago.h"
+#include "BarberoArchivo.h"
+#include "Barbero.h"
+using namespace std;
 
 struct conteoClientes {
     int idCliente;
@@ -213,10 +216,13 @@ void  MenuInformes::InformesFinancieros ()const
 
         case 3:
         {
+            informeBarbero();
         } break;
 
         case 4:
-        {     } break;
+        {
+            informeMetodosPago();
+        } break;
         case 0:
         {
             InterfazMenuinformes ();
@@ -353,7 +359,7 @@ void MenuInformes::informeClientesFrecuentes() const {
         vecConteo[i].cantidadVisitas = 0;
     }
 
-    // El recuento de visitas
+    // El recuento de visitas (AHORA CON ACCESO DIRECTO OPTIMIZADO)
     int totalTurnos = archTurnos.cantidadRegistros();
 
     for(int i=0; i < totalTurnos; i++){
@@ -361,13 +367,13 @@ void MenuInformes::informeClientesFrecuentes() const {
         if(turnoActual.getActivo()){
             int posPago = archPagos.buscarPorTurno(turnoActual.getId());
             if(posPago != -1){
-                // Bucle
-                for(int j=0; j < totalClientes; j++){
-                    if(vecConteo[j].idCliente == turnoActual.getIdCliente()){
-                        vecConteo[j].cantidadVisitas++;
-                        break;
-                    }
+
+                // Optimizacion: Buscamos la posicion directamente en lugar de usar un bucle anidado
+                int posCli = archClientes.buscar(turnoActual.getIdCliente());
+                if(posCli != -1){
+                    vecConteo[posCli].cantidadVisitas++;
                 }
+
             }
         }
     }
@@ -458,26 +464,149 @@ void MenuInformes::informeEstadisticasTurnos() const {
         }
     }
 
-    // 4. Calcular los porcentajes (multiplicamos por 100.0f para no perder los decimales)
+    //Calcular los porcentajes (multiplicamos por 100.0f para no perder los decimales)
     float pctRealizados = (realizados * 100.0f) / totalTurnos;
     float pctCancelados = (cancelados * 100.0f) / totalTurnos;
     float pctPendientes = (pendientes * 100.0f) / totalTurnos;
 
-    // 5. Presentacion visual
+    //Presentacion visual
     cout << "Total de turnos agendados historicamente: " << totalTurnos << endl << endl;
 
     rlutil::setColor(rlutil::GREEN);
-    cout << "-> Realizados (Cobrados) : " << realizados << " (" << pctRealizados << "%)" << endl;
+    cout << "Realizados (Cobrados) : " << realizados << " (" << pctRealizados << "%)" << endl;
 
     rlutil::setColor(rlutil::LIGHTBLUE);
-    cout << "-> Pendientes (Por venir): " << pendientes << " (" << pctPendientes << "%)" << endl;
+    cout << "Pendientes: " << pendientes << " (" << pctPendientes << "%)" << endl;
 
     rlutil::setColor(rlutil::RED);
-    cout << "-> Cancelados (Baja)     : " << cancelados << " (" << pctCancelados << "%)" << endl;
+    cout << "Cancelados: " << cancelados << " (" << pctCancelados << "%)" << endl;
 
     rlutil::setColor(rlutil::WHITE);
     cout << endl;
     system("pause");
 }
 
+void MenuInformes::informeBarbero() const {
+    system("cls");
+    rlutil::setColor(rlutil::YELLOW);
+    cout << "--- BARBERO (CON MAS CORTES) ---" << endl << endl;
+    rlutil::setColor(rlutil::WHITE);
 
+    BarberoArchivo archBarberos;
+    ArchivoTurnos archTurnos;
+    ArchivoPagos archPagos;
+
+    int totalBarberos = archBarberos.cantidadRegistros();
+    if (totalBarberos == 0) {
+        cout << "No hay barberos registrados." << endl;
+        system("pause");
+        return;
+    }
+
+    // Pedimos memoria dinamica un arreglo de enteros simples
+    int* cortesPorBarbero = new int[totalBarberos];
+
+    //Limpiamos la memoria
+    for(int i=0; i < totalBarberos; i++){
+        cortesPorBarbero[i] = 0;
+    }
+
+    //El motor de recuento cruzando Turnos y Pagos
+    int totalTurnos = archTurnos.cantidadRegistros();
+    for(int i=0; i < totalTurnos; i++){
+        Turno turnoActual = archTurnos.leer(i);
+
+        if(turnoActual.getActivo()){
+            int posPago = archPagos.buscarPorTurno(turnoActual.getId());
+            if(posPago != -1){ // Si esta pagado
+
+                // Buscamos la posicion de ese barbero en su archivo
+                int posBarbero = archBarberos.buscar(turnoActual.getIdBarbero());
+
+                if (posBarbero != -1) {
+                    // Sumamos 1 a esa posicion exacta en el vector
+                    cortesPorBarbero[posBarbero]++;
+                }
+            }
+        }
+    }
+
+    //Buscar quien tiene el numero mas grande
+    int maxCortes = 0;
+    int posMax = 0;
+
+    for(int i=0; i < totalBarberos; i++){
+        if(cortesPorBarbero[i] > maxCortes){
+            maxCortes = cortesPorBarbero[i];
+            posMax = i;
+        }
+    }
+
+    //Mostrar al ganador
+    if (maxCortes > 0) {
+        Barbero ganador = archBarberos.leer(posMax);
+        cout << "El barbero cracks es: " << ganador.getNombre() << " " << ganador.getApellido() << endl;
+        cout << "Total de cortes realizados y cobrados: " << maxCortes << endl;
+    } else {
+        cout << "Todavia no se registraron cortes cobrados por ningun barbero." << endl;
+    }
+
+    //LA REGLA
+    delete[] cortesPorBarbero;
+
+    cout << endl;
+    system("pause");
+}
+
+void MenuInformes::informeMetodosPago() const {
+    system("cls");
+    rlutil::setColor(rlutil::YELLOW);
+    cout << "--- METODOS DE PAGO UTILIZADOS ---" << endl << endl;
+    rlutil::setColor(rlutil::WHITE);
+
+    ArchivoPagos archPagos;
+    int totalPagos = archPagos.cantidadRegistros();
+
+    if(totalPagos == 0){
+        cout << "No hay pagos registrados." << endl;
+        system("pause");
+        return;
+    }
+
+    //Contadores simples
+    int cantEfectivo = 0, cantTarjeta = 0, cantTransferencia = 0, cantOtro = 0, cantCanje = 0;
+
+    //Motor de lectura y clasificacion
+    for(int i = 0; i < totalPagos; i++){
+        Pago pagoActual = archPagos.leer(i);
+
+        if(pagoActual.getActivo()){
+
+            if (strcmp(pagoActual.getMetodoPago(), "Efectivo") == 0) {
+                cantEfectivo++;
+            }
+            else if (strcmp(pagoActual.getMetodoPago(), "Tarjeta") == 0) {
+                cantTarjeta++;
+            }
+            else if (strcmp(pagoActual.getMetodoPago(), "Transferencia") == 0) {
+                cantTransferencia++;
+            }
+            else if (strcmp(pagoActual.getMetodoPago(), "Otro") == 0) {
+                cantOtro++;
+            }
+            else if (strcmp(pagoActual.getMetodoPago(), "Canje Puntos") == 0) {
+                cantCanje++;
+            }
+        }
+    }
+
+    //Mostrar resultados
+    cout << "Efectivo:                   " << cantEfectivo << " pagos." << endl;
+    cout << "Tarjeta de Debito/Credito:  " << cantTarjeta << " pagos." << endl;
+    cout << "Transferencia:          " << cantTransferencia << " pagos." << endl;
+    cout << "Otro:                       " << cantOtro << " pagos." << endl;
+    cout << "Canjes de Puntos Gratis:    " << cantCanje << " pagos." << endl;
+
+    cout << endl;
+    system("pause");
+}
