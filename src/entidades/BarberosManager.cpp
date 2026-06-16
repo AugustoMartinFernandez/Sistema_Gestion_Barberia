@@ -265,3 +265,22 @@ void BarberosManager::listarBarberos() const {
     cout << endl;
     system("pause");
 }
+
+
+void BarberosManager::listarBarberosResumido() const{
+
+    BarberoArchivo archivo("barberos.dat");
+    int total = archivo.cantidadRegistros();
+
+    for(int i = 0; i < total; i++){
+
+        Barbero barbero = archivo.leer(i);
+
+        if(barbero.getActivo()){
+            cout << "ID: " << barbero.getId()
+                 << " | " << barbero.getNombre()
+                 << " " << barbero.getApellido()
+                 << endl;
+        }
+    }
+}

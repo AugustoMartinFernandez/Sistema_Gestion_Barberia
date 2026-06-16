@@ -7,8 +7,9 @@ using namespace std;
 #include "ArchivoConfiguracion.h"
 #include "ArchivoServicios.h"
 #include "Servicio.h"
-#include "ArchivoClientes.h"
+#include "TurnosManager.h"
 #include "Cliente.h"
+#include "ArchivoClientes.h"
 
 void PagosManager::registrarPago(){
 
@@ -23,6 +24,13 @@ void PagosManager::registrarPago(){
 
     cout << "---- REGISTRAR PAGO ----" << endl;
 
+    cout << "TURNOS DISPONIBLES" << endl;
+    TurnosManager turnosManager;
+    turnosManager.listarTurnosResumido();
+    cout << "=============================\n" << endl;
+
+    cout << endl;
+    cout << "---- CARGA DEL TURNO ----" << endl;
     cout << "Ingrese ID del turno a cobrar: ";
     cin >> idTurno;
 
@@ -44,7 +52,7 @@ void PagosManager::registrarPago(){
 
     Turno turnoRealizado = archivoTurnos.leer(posTurno);
 
-    // Cl·usula de guarda que agregamos antes: Turno anulado
+    // Cl√°usula de guarda que agregamos antes: Turno anulado
     if (turnoRealizado.getActivo() == false) {
         cout << "No se puede cobrar un turno anulado." << endl;
         system("pause");

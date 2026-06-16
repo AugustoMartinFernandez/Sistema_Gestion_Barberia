@@ -283,3 +283,21 @@ void ClientesManager::listarClientes() const // <-- AGREGADO EL CONST ACA
     cout << endl;
     system("pause");
 }
+
+void ClientesManager::listarClientesResumido() const{
+
+    ArchivoClientes archivo;
+    int total = archivo.cantidadRegistros();
+
+    for(int i = 0; i < total; i++){
+
+        Cliente cliente = archivo.leer(i);
+
+        if(cliente.getActivo()){
+            cout << "ID: " << cliente.getId()
+                 << " | " << cliente.getNombre()
+                 << " " << cliente.getApellido()
+                 << endl;
+        }
+    }
+}

@@ -245,3 +245,22 @@ void ServiciosManager::listarServicios() const {
     cout << endl;
     system("pause");
 }
+
+
+void ServiciosManager::listarServiciosResumido() const{
+
+    ArchivoServicios archivo;
+    int total = archivo.cantidadRegistros();
+
+    for(int i = 0; i < total; i++){
+
+        Servicio servicio = archivo.leer(i);
+
+        if(servicio.getActivo()){
+            cout << "ID: " << servicio.getId()
+                 << " | " << servicio.getDescripcion()
+                 << " | $" << servicio.getPrecio()
+                 << endl;
+        }
+    }
+}

@@ -9,5 +9,6 @@ public:
     int buscarClientePorNombreApellido();
     void editarTurno();
     void borrarTurno();
+    void listarTurnosResumido();
 
 };
