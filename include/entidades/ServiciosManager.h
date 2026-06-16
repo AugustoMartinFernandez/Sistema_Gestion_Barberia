@@ -6,4 +6,5 @@ public:
     void editarServicio() const;
     void gestionarEstadoServicio() const;
     void listarServicios() const;
+    void listarServiciosResumido() const;
 };
