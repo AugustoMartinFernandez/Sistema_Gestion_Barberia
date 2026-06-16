@@ -6,6 +6,9 @@ using namespace std;
 #include "facha.h"
 #include "Servicio.h"
 #include "ArchivoServicios.h"
+#include "Pago.h"
+#include "Fecha.h"
+#include "InformesManager.h"
 
 void MenuInformes::InterfazMenuinformes ()const
 {
@@ -158,10 +161,43 @@ void  MenuInformes::InformesFinancieros ()const
 
         switch (opcion)
         {
-        case 1:
-        {
+case 1:
+{
+    int opcionRec;
+    InformesManager manager;
 
-        } break;
+    cout << "---- RECAUDACION ----" << endl;
+    cout << "1 - Recaudacion por dia" << endl;
+    cout << "2 - Recaudacion por mes" << endl;
+    cout << "3 - Recaudacion por anio" << endl;
+    cout << "0 - Volver" << endl;
+    cout << "Opcion: ";
+    cin >> opcionRec;
+
+    switch(opcionRec)
+    {
+        case 1:
+            manager.recaudacionPorDia();
+            break;
+
+        case 2:
+            manager.recaudacionPorMes();
+            break;
+
+        case 3:
+            manager.recaudacionPorAnio();
+            break;
+
+        case 0:
+            break;
+
+        default:
+            cout << "Opcion invalida." << endl;
+            system("pause");
+            break;
+    }
+
+} break;
 
         case 2:
         {

@@ -50,6 +50,7 @@
 		<Unit filename="include/entidades/BarberosManager.h" />
 		<Unit filename="include/entidades/Cliente.h" />
 		<Unit filename="include/entidades/ClientesManager.h" />
+		<Unit filename="include/entidades/InformesManager.h" />
 		<Unit filename="include/entidades/Pago.h" />
 		<Unit filename="include/entidades/PagosManager.h" />
 		<Unit filename="include/entidades/Persona.h" />
@@ -79,6 +80,7 @@
 		<Unit filename="src/entidades/BarberosManager.cpp" />
 		<Unit filename="src/entidades/Cliente.cpp" />
 		<Unit filename="src/entidades/ClientesManager.cpp" />
+		<Unit filename="src/entidades/InformesManager.cpp" />
 		<Unit filename="src/entidades/Pago.cpp" />
 		<Unit filename="src/entidades/PagosManager.cpp" />
 		<Unit filename="src/entidades/Persona.cpp" />

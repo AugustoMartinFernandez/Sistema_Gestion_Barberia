@@ -8,7 +8,4 @@ public:
 
 void  InformesFinancieros ()const;
 void InformesGestionClientes ()const;
-
-
-
 };
