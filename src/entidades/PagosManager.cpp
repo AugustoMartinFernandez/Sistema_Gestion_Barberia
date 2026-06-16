@@ -8,6 +8,8 @@ using namespace std;
 #include "ArchivoServicios.h"
 #include "Servicio.h"
 #include "TurnosManager.h"
+#include "Cliente.h"
+#include "ArchivoClientes.h"
 
 void PagosManager::registrarPago(){
 
