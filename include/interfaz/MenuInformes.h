@@ -12,6 +12,8 @@ private:
 
     void informeClientesFrecuentes() const;
     void informeEstadisticasTurnos() const;
+    void informeBarbero() const;
+    void informeMetodosPago() const;
 
 
 };

@@ -12,8 +12,6 @@ Pago::Pago(){
     _activo = false;
 }
 
-
-
 void Pago::setId(int id){
     _id = id;
 }
@@ -38,8 +36,6 @@ void Pago::setActivo(bool activo){
 }
 
 
-
-
 int Pago::getId() const{
     return _id;
 }
@@ -62,19 +58,47 @@ bool Pago::getActivo() const{
     return _activo;
 }
 
-
-
-
-
 void Pago::cargar(){
     if (_monto == 0) {
         setMetodoPago("Canje Puntos");
         cout << "Metodo de pago: Canje Puntos" << endl;
     } else {
-    char metodoAux[20];
-    cout << "Metodo de pago: ";
-    cin.getline(metodoAux, 20);
-    setMetodoPago(metodoAux);
+        int opcionMetodo = 0;
+        bool opcionValida = false;
+
+        cout << endl;
+        cout << "--- SELECCIONE METODO DE PAGO ---" << endl;
+        cout << "1. Efectivo" << endl;
+        cout << "2. Tarjeta de Debito/Credito" << endl;
+        cout << "3. Transferencia (MercadoPago)" << endl;
+        cout << "4. Otro" << endl;
+
+        while (!opcionValida) {
+            cout << "Opcion: ";
+            cin >> opcionMetodo;
+
+            switch(opcionMetodo) {
+                case 1:
+                    setMetodoPago("Efectivo");
+                    opcionValida = true;
+                    break;
+                case 2:
+                    setMetodoPago("Tarjeta");
+                    opcionValida = true;
+                    break;
+                case 3:
+                    setMetodoPago("Transferencia");
+                    opcionValida = true;
+                    break;
+                case 4:
+                    setMetodoPago("Otro");
+                    opcionValida = true;
+                    break;
+                default:
+                    cout << "Opcion invalida. Intente de nuevo." << endl;
+                    break;
+            }
+        }
     }
 
     _fechaPago.setCurrentDate();
