@@ -6,4 +6,5 @@ public:
     void editarBarbero() const;
     void gestionarEstadoBarbero() const;
     void listarBarberos() const;
+    void listarBarberosResumido() const;
 };

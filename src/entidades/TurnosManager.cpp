@@ -10,6 +10,8 @@ using namespace std;
 #include "BarberoArchivo.h"
 #include "ArchivoServicios.h"
 #include "ServiciosManager.h"
+#include "ClientesManager.h"
+#include "BarberosManager.h"
 #include <cstring>
 
 void TurnosManager::crearTurno(){
@@ -37,10 +39,22 @@ void TurnosManager::crearTurno(){
     system("cls");
     cout << "---- CREAR TURNO ----" << endl;
 
-    cout << "\n=== SERVICIOS DISPONIBLES ===" << endl;
-    ServiciosManager servManager;
-    servManager.listarServicios();
+    cout << "CLIENTES DISPONIBLES" << endl;
+    ClientesManager clientesManager;
+    clientesManager.listarClientesResumido();
     cout << "=============================\n" << endl;
+
+    cout << "BARBEROS DISPONIBLES" << endl;
+    BarberosManager barberosManager;
+    barberosManager.listarBarberosResumido();
+
+    cout << "=============================\n" << endl;
+    cout << "SERVICIOS DISPONIBLES" << endl;
+    ServiciosManager serviciosManager;
+    serviciosManager.listarServiciosResumido();
+
+    cout << endl;
+    cout << "---- CARGA DEL TURNO ----" << endl;
 
     turno.cargar();
     turno.setId(nuevoId);
@@ -223,4 +237,35 @@ void TurnosManager::borrarTurno(){
     }
 
     system("pause");
+}
+
+
+void TurnosManager::listarTurnosResumido() {
+
+    ArchivoTurnos archivoTurnos;
+    ArchivoClientes archivoClientes;
+    ArchivoServicios archivoServicios;
+
+    int total = archivoTurnos.cantidadRegistros();
+
+    for(int i = 0; i < total; i++){
+
+        Turno turno = archivoTurnos.leer(i);
+
+        if(!turno.getActivo()) continue;
+
+        int posCli = archivoClientes.buscar(turno.getIdCliente());
+        int posSer = archivoServicios.buscar(turno.getIdServicio());
+
+        Cliente cliente = archivoClientes.leer(posCli);
+        Servicio servicio = archivoServicios.leer(posSer);
+
+        cout << "ID Turno: " << turno.getId()
+             << " | Cliente: "
+             << cliente.getNombre() << " "
+             << cliente.getApellido()
+             << " | Servicio: "
+             << servicio.getDescripcion()
+             << endl;
+    }
 }

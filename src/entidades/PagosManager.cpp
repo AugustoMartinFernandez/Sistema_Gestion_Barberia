@@ -7,6 +7,7 @@ using namespace std;
 #include "ArchivoConfiguracion.h"
 #include "ArchivoServicios.h"
 #include "Servicio.h"
+#include "TurnosManager.h"
 
 void PagosManager::registrarPago(){
 
@@ -20,6 +21,13 @@ void PagosManager::registrarPago(){
 
     cout << "---- REGISTRAR PAGO ----" << endl;
 
+    cout << "TURNOS DISPONIBLES" << endl;
+    TurnosManager turnosManager;
+    turnosManager.listarTurnosResumido();
+    cout << "=============================\n" << endl;
+
+    cout << endl;
+    cout << "---- CARGA DEL TURNO ----" << endl;
     cout << "Ingrese ID del turno a cobrar: ";
     cin >> idTurno;
 

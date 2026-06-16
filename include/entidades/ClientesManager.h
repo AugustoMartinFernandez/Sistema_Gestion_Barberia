@@ -7,5 +7,6 @@ public:
     void editarCliente() const;
     void gestionarEstadoCliente() const;
     void listarClientes() const;
+    void listarClientesResumido() const;
 
 };
