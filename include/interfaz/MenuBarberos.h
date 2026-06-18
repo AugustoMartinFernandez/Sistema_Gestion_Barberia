@@ -8,4 +8,5 @@ public:
     void EditarInformacion() const;
     void GestionarEstado() const; // para dar de baja/reactivar
     void ListarBarberos() const;
+    void BuscarBarberoPorID() const;
 };

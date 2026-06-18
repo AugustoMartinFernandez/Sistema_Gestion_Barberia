@@ -10,5 +10,6 @@ public:
     void editarTurno();
     void borrarTurno();
     void listarTurnosResumido();
+    void listarTurnosPorEstado();
 
 };

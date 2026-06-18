@@ -264,3 +264,42 @@ void ServiciosManager::listarServiciosResumido() const{
         }
     }
 }
+
+
+void ServiciosManager::buscarServicioPorID() const {
+
+    int idBuscado;
+
+    cout << "Ingrese ID del servicio: ";
+    cin >> idBuscado;
+
+    while(idBuscado <= 0){
+        cout << "ID invalido. Intente nuevamente: ";
+        cin >> idBuscado;
+    }
+
+    ArchivoServicios archivo;
+
+    int cantidad = archivo.cantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Servicio servicio = archivo.leer(i);
+
+        if(servicio.getId() == idBuscado && servicio.getActivo()){
+
+            cout << "\nServicio encontrado:\n" << endl;
+
+            servicio.mostrar();
+
+            cout << endl;
+            system("pause");
+            return;
+        }
+    }
+
+    cout << "\nNo se encontro un servicio activo con ese ID." << endl;
+    cout << endl;
+
+    system("pause");
+}
