@@ -8,5 +8,6 @@ public:
     void gestionarEstadoCliente() const;
     void listarClientes() const;
     void listarClientesResumido() const;
+    void buscarClientePorID() const;
 
 };

@@ -11,4 +11,5 @@ class MenuCliente {
     void EditarCliente() const;
     void Dardebaja_Reactivarcliente() const;
     void Listadeclientes() const;
+    void BuscarClientePorID() const;
 };

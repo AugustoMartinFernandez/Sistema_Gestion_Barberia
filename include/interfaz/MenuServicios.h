@@ -8,4 +8,5 @@ public:
     void EditarServicio() const;
     void GestionarEstado() const;
     void ListarServicios() const;
+    void BuscarServicioPorID() const;
 };

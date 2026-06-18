@@ -269,3 +269,33 @@ void TurnosManager::listarTurnosResumido() {
              << endl;
     }
 }
+
+
+
+void TurnosManager::listarTurnosPorEstado() {
+
+    ArchivoTurnos archivo;
+
+    int opcion;
+
+    cout << "1 - Turnos Activos" << endl;
+    cout << "0 - Turnos Cancelados" << endl;
+    cout << "Opcion: ";
+    cin >> opcion;
+
+    int total = archivo.cantidadRegistros();
+
+    cout << endl;
+    cout << "---- RESULTADOS ----" << endl;
+
+    for(int i = 0; i < total; i++){
+
+        Turno turno = archivo.leer(i);
+
+        if(turno.getActivo() == opcion){
+            turno.mostrar();
+        }
+    }
+
+    system("pause");
+}
