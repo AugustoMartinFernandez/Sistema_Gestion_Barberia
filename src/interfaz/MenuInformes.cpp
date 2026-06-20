@@ -310,6 +310,10 @@ void MenuInformes::InformesGestionClientes() const {
         rlutil::locate(32, 23);
         cout << "4- Cantidad de turnos por barbero";
 
+        rlutil::locate(32, 24);
+        cout << "5- Facturacion por Servicio" ;
+
+
         rlutil::locate(32, 26);
         cout << "0- Volver al Menu Informes";
 
@@ -331,14 +335,17 @@ void MenuInformes::InformesGestionClientes() const {
             break;
 
         case 3:
-            cout << endl << "Informe pendiente de implementar: Servicios mas solicitados." << endl;
-            system("pause");
-            break;
+            manager.InformeServMasSolicitados ();
+       break;
 
         case 4:
             cout << endl << "Informe pendiente de implementar: Cantidad de turnos por barbero." << endl;
             system("pause");
             break;
+
+         case 5:
+             manager.InformeVentPorServicio ();
+             break;
 
         case 0:
             break;
