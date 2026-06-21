@@ -224,13 +224,13 @@ void MenuInformes::InformesFinancieros() const {
 
             for (int i = 0; i < archserv.cantidadRegistros(); i++) {
                 serv = archserv.leer(i);
-
-                if (serv.getPrecio() > 5000 && !encontrado) {
+//agregue condicion para que el servicio que muestre sea uno activo
+                if (serv.getActivo() && serv.getPrecio() > 5000 && !encontrado) {
                     maximo = serv.getPrecio();
                     idmaximo = serv.getId();
                     encontrado = true;
                 }
-                else if (serv.getPrecio() > 5000 && serv.getPrecio() > maximo) {
+                else if (serv.getActivo() && serv.getPrecio() > 5000 && serv.getPrecio() > maximo) {
                     maximo = serv.getPrecio();
                     idmaximo = serv.getId();
                 }
@@ -339,8 +339,7 @@ void MenuInformes::InformesGestionClientes() const {
        break;
 
         case 4:
-            cout << endl << "Informe pendiente de implementar: Cantidad de turnos por barbero." << endl;
-            system("pause");
+            manager.informeTurnosPorBarbero();
             break;
 
          case 5:

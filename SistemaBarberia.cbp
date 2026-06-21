@@ -50,6 +50,7 @@
 		<Unit filename="include/entidades/BarberosManager.h" />
 		<Unit filename="include/entidades/Cliente.h" />
 		<Unit filename="include/entidades/ClientesManager.h" />
+		<Unit filename="include/entidades/InformesFinancieros.h" />
 		<Unit filename="include/entidades/InformesManager.h" />
 		<Unit filename="include/entidades/Pago.h" />
 		<Unit filename="include/entidades/PagosManager.h" />
@@ -66,6 +67,7 @@
 		<Unit filename="include/interfaz/MenuPagos.h" />
 		<Unit filename="include/interfaz/MenuServicios.h" />
 		<Unit filename="include/interfaz/MenuTurnos.h" />
+		<Unit filename="include/interfaz/facha.h" />
 		<Unit filename="include/interfaz/rlutil.h" />
 		<Unit filename="include/utilidades/ArchivoConfiguracion.h" />
 		<Unit filename="include/utilidades/Fecha.h" />
@@ -80,6 +82,7 @@
 		<Unit filename="src/entidades/BarberosManager.cpp" />
 		<Unit filename="src/entidades/Cliente.cpp" />
 		<Unit filename="src/entidades/ClientesManager.cpp" />
+		<Unit filename="src/entidades/InformesFinancieros.cpp" />
 		<Unit filename="src/entidades/InformesManager.cpp" />
 		<Unit filename="src/entidades/Pago.cpp" />
 		<Unit filename="src/entidades/PagosManager.cpp" />

@@ -594,7 +594,103 @@ for (int i=0; i<totalServicios; i++) {
 
 
 
+void InformesManager::informeTurnosPorBarbero() const
+{
+    system("cls");
 
+    rlutil::setColor(rlutil::YELLOW);
+    cout << "--- CANTIDAD DE TURNOS POR BARBERO ---" << endl << endl;
+
+    rlutil::setColor(rlutil::WHITE);
+
+    BarberoArchivo archivoBarberos;
+    ArchivoTurnos archivoTurnos;
+    ArchivoPagos archivoPagos;
+
+    int totalBarberos = archivoBarberos.cantidadRegistros();
+
+    if(totalBarberos == 0)
+    {
+        cout << "No hay barberos registrados en el sistema." << endl;
+        system("pause");
+        return;
+    }
+
+    // una posicion por cada barbero del archivoo
+    int* turnosPorBarbero = new int[totalBarberos];
+
+    // incializamos contadorse
+    for(int i = 0; i < totalBarberos; i++)
+    {
+        turnosPorBarbero[i] = 0;
+    }
+
+    int totalTurnos = archivoTurnos.cantidadRegistros();
+
+    // recorrer turnos
+    for(int i = 0; i < totalTurnos; i++)
+    {
+        Turno turnoActual = archivoTurnos.leer(i);
+
+        // contamos solo turnos activos
+        if(turnoActual.getActivo())
+        {
+            // verrifica turno pagado
+            int posPago = archivoPagos.buscarPorTurno(
+                              turnoActual.getId()
+                          );
+
+            if(posPago != -1)
+            {
+                // pos de barbero en el .dat
+                int posBarbero = archivoBarberos.buscar(
+                                     turnoActual.getIdBarbero()
+                                 );
+
+                if(posBarbero != -1)
+                {
+                    turnosPorBarbero[posBarbero]++;
+                }
+            }
+        }
+    }
+
+    bool hayTurnos = false;
+
+    // mostramos los barbneros
+    for(int i = 0; i < totalBarberos; i++)
+    {
+        Barbero barberoActual = archivoBarberos.leer(i);
+
+        if(barberoActual.getActivo())
+        {
+            cout << "Barbero: "
+                 << barberoActual.getNombre() << " "
+                 << barberoActual.getApellido() << endl;
+
+            cout << "Cantidad de turnos realizados y cobrados: "
+                 << turnosPorBarbero[i] << endl;
+
+            cout << "----------------------------------------" << endl;
+
+            if(turnosPorBarbero[i] > 0)
+            {
+                hayTurnos = true;
+            }
+        }
+    }
+
+    if(!hayTurnos)
+    {
+        cout << endl;
+        cout << "Todavia no hay turnos realizados y cobrados." << endl;
+    }
+
+    delete[] turnosPorBarbero;
+
+    cout << endl;
+    system("pause");
+}
 
 
 

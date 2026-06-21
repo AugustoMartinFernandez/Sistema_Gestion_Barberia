@@ -3,7 +3,6 @@ using namespace std;
 #include "InformesFinancieros.h"
 #include "ArchivoTurnos.h"
 #include "Fecha.h"
-#include "InformeFinanciero.h"
 #include "ArchivoTurnos.h"
 #include "ArchivoServicios.h"
 #include "Turno.h"
@@ -121,7 +120,7 @@ float totalMes = 0.0f;
   for (int i = 0; i < dias; i++) {
     cout<< "Dia #"<< (i + 1)<< ": $ "<< recaudacion [i]<<endl;
   }
-  cout<< " - - - - - - - - - - - "
+  cout<< " - - - - - - - - - - - ";
   cout << "Total del Mes: $ "<< totalMes<<endl;
 
    int SinVentas =0;
@@ -178,8 +177,4 @@ float totalMes = 0.0f;
 
 }
 
-void InformesFinancieros::ServicioSupere5mil ()const;
 
-void InformesFinancieros::BarberoMasCortes () const;
-
-void InformesFinancieros::MetodosPagoUtilizados ()const;
