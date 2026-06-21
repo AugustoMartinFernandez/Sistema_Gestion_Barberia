@@ -7,4 +7,6 @@ public:
     void gestionarEstadoServicio() const;
     void listarServicios() const;
     void listarServiciosResumido() const;
+    void buscarServicioPorID() const;
+    void consultarPorRangoDePrecios() const;
 };
