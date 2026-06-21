@@ -301,3 +301,37 @@ void ClientesManager::listarClientesResumido() const{
         }
     }
 }
+
+
+void ClientesManager::buscarClientePorID() const{
+
+    int idBuscado;
+
+    cout << "Ingrese ID del cliente: ";
+    cin >> idBuscado;
+
+    while(idBuscado <= 0){
+        cout << "ID invalido. Intente nuevamente: ";
+        cin >> idBuscado;
+    }
+
+    ArchivoClientes archivo;
+
+    int cantidad = archivo.cantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++) {
+
+        Cliente cliente = archivo.leer(i);
+
+        if(cliente.getId() == idBuscado && cliente.getActivo()) {
+
+            cout << "\nCliente encontrado:\n" << endl;
+            cliente.mostrar();
+            system("pause");
+            return;
+        }
+    }
+
+    cout << "\nNo se encontro un cliente activo con ese ID." << endl;
+    system("pause");
+}

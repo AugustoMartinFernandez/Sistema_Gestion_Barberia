@@ -10,117 +10,111 @@
 
 using namespace std;
 
-void MenuCliente::InterfazMenuCliente () const
-{
+void MenuCliente::InterfazMenuCliente() const {
     int opcion;
 
-    do
-    {
-        system("cls"); // limpia pantalla ;
-        LogoConstante ();   //logo por defecto , aparece en todos los menuss(barberia pacheco)
+    do {
+        system("cls");
+        LogoConstante();
+
         rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(27, 18);
-        cout<< " E s t a s  e n:  M e n u   C l i e n t e s";
-        rlutil::setColor(rlutil::BLUE);
-        rlutil::locate(27, 19);
-        cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
-        rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(27, 20);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::RED);
-        rlutil::locate(27, 21);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::BLUE);
-        rlutil::locate(27, 22);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(27, 23);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::RED);
-        rlutil::locate(27, 24);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::BLUE);
-        rlutil::locate(27, 25);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(27, 26);
-        cout<< "บ                                                    บ";
-        rlutil::setColor(rlutil::RED);
-        rlutil::locate(27, 27);
-        cout<<  "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+        cout << " E s t a s  e n:  M e n u   C l i e n t e s";
 
-        rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(32, 20);
-        rlutil::locate(32, 22);
-        rlutil::locate(32, 24);
-        rlutil::locate(32, 26);
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(27, 19); cout << "====================================================";
+        rlutil::locate(27, 20); cout << "|                                                  |";
+        rlutil::locate(27, 21); cout << "|                                                  |";
+        rlutil::locate(27, 22); cout << "|                                                  |";
+        rlutil::locate(27, 23); cout << "|                                                  |";
+        rlutil::locate(27, 24); cout << "|                                                  |";
+        rlutil::locate(27, 25); cout << "|                                                  |";
+        rlutil::locate(27, 26); cout << "|                                                  |";
+        rlutil::locate(27, 27); cout << "====================================================";
 
         rlutil::locate(32, 20);
-        cout<<"1- Crear Nuevo Cliente "<<endl;
-        rlutil::locate(32, 22);
-        cout<<"2- Editar Cliente  "<<endl;
-        rlutil::locate(32, 24);
-        cout<<"3- Dar de baja / Reactivar cliente "<<endl;
-        rlutil::locate(32, 26);
-        cout<<"4- Listado de  clientes "<<endl;
+        cout << "1- Crear Nuevo Cliente";
 
-        rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(32, 28);
-        cout<< " Opcion 0 (cero) Para Salir Al Menu Principal..."<<endl;
+        rlutil::locate(32, 21);
+        cout << "2- Editar Cliente";
+
+        rlutil::locate(32, 22);
+        cout << "3- Dar de baja / Reactivar Cliente";
+
+        rlutil::locate(32, 23);
+        cout << "4- Listado de Clientes";
+
+        rlutil::locate(32, 24);
+        cout << "5- Buscar Cliente por ID";
+
+        rlutil::locate(32, 26);
+        cout << "0- Volver al Menu Principal";
+
         rlutil::setColor(rlutil::RED);
         rlutil::locate(32, 29);
-        cout<< "Eleccion: #  ";
-        rlutil::setColor(rlutil::BLUE);
-        cin>>opcion;
-        cin.ignore(); // LIMPIEZA DEL BUFFER:  para que cin.getline() funcione despues
+        cout << "Eleccion: #  ";
 
-        switch (opcion)
-        {
-        case 1: { CrearNuevoCliente(); break; }
-        case 2: { EditarCliente(); break; }
-        case 3: { Dardebaja_Reactivarcliente(); break; }
-        case 4: { Listadeclientes(); break; }
+        rlutil::setColor(rlutil::WHITE);
+        cin >> opcion;
+        cin.ignore();
+
+        switch (opcion) {
+        case 1:
+            CrearNuevoCliente();
+            break;
+
+        case 2:
+            EditarCliente();
+            break;
+
+        case 3:
+            Dardebaja_Reactivarcliente();
+            break;
+
+        case 4:
+            Listadeclientes();
+            break;
+
+        case 5:
+            BuscarClientePorID();
+            break;
+
         case 0:
         {
             MenuManager volver;
-            volver.MenuPrincipal ();
+            volver.MenuPrincipal();
             break;
         }
+
         default:
-            system ("cls");
-            cout<< "Opcion invalida. Ingresa un numero valido para acceder."<<endl;
-            cout<<" 0 (cero) para volver al menu principal."<<endl;
-            cout<<endl<<endl;
-            system ("pause");
-            system ("cls");
+            system("cls");
+            rlutil::setColor(rlutil::RED);
+            cout << "Opcion invalida. Ingresa un numero valido para acceder." << endl;
+
+            rlutil::setColor(rlutil::WHITE);
+            cout << "0 (cero) para volver al menu principal." << endl;
+            cout << endl << endl;
+
+            system("pause");
+            system("cls");
         }
-    }
-    while ( opcion != 0);
+    } while (opcion != 0);
 }
 
-void MenuCliente::CrearNuevoCliente() const
-{
-    system ("cls");
-    LogoConstante ();
+void MenuCliente::CrearNuevoCliente() const {
+    system("cls");
+    LogoConstante();
 
     rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 19);
-    cout<< "ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออป";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 20);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::RED);
-    rlutil::locate(27, 21);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 22);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 23);
-    cout<< "ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+    rlutil::locate(27, 19); cout << "==========================================================";
+    rlutil::locate(27, 20); cout << "|                                                        |";
+    rlutil::locate(27, 21); cout << "|                                                        |";
+    rlutil::locate(27, 22); cout << "|                                                        |";
+    rlutil::locate(27, 23); cout << "==========================================================";
+
     rlutil::setColor(rlutil::YELLOW);
     rlutil::locate(29, 21);
-    cout<<"A l t a  D e  N u e v o  C l i e n t e";
+    cout << "A l t a  D e  N u e v o  C l i e n t e";
 
     cout << endl << endl;
 
@@ -128,29 +122,20 @@ void MenuCliente::CrearNuevoCliente() const
     clienteManager.crearNuevoCliente();
 }
 
-void MenuCliente::EditarCliente() const
-{
-    system ("cls");
-    LogoConstante ();
+void MenuCliente::EditarCliente() const {
+    system("cls");
+    LogoConstante();
 
     rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 19);
-    cout<< "ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออป";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 20);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::RED);
-    rlutil::locate(27, 21);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 22);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 23);
-    cout<< "ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+    rlutil::locate(27, 19); cout << "==========================================================";
+    rlutil::locate(27, 20); cout << "|                                                        |";
+    rlutil::locate(27, 21); cout << "|                                                        |";
+    rlutil::locate(27, 22); cout << "|                                                        |";
+    rlutil::locate(27, 23); cout << "==========================================================";
+
     rlutil::setColor(rlutil::YELLOW);
-    rlutil::locate(29, 18);
-    cout<<" E d i t  D e  C l i e n t e";
+    rlutil::locate(29, 21);
+    cout << "E d i t a r  C l i e n t e";
 
     cout << endl << endl;
 
@@ -158,40 +143,24 @@ void MenuCliente::EditarCliente() const
     clienteManager.editarCliente();
 }
 
-void MenuCliente::Dardebaja_Reactivarcliente() const
-{
-    system ("cls");
-    LogoConstante ();
+void MenuCliente::Dardebaja_Reactivarcliente() const {
+    system("cls");
+    LogoConstante();
+
     rlutil::setColor(rlutil::YELLOW);
     rlutil::locate(27, 18);
-    cout<< " E s t a s  e n:  S u b m e n u - E s t a d o  C l i e n t e s";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 19);
-    cout<< "ษออออออออออออออออออออออออออออออออออออออออออออออออออออป";
+    cout << " E s t a s  e n:  E s t a d o  C l i e n t e s";
+
     rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 20);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::RED);
-    rlutil::locate(27, 21);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 22);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 23);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::RED);
-    rlutil::locate(27, 24);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 25);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 26);
-    cout<< "บ                                                    บ";
-    rlutil::setColor(rlutil::RED);
-    rlutil::locate(27, 27);
-    cout<<  "ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+    rlutil::locate(27, 19); cout << "====================================================";
+    rlutil::locate(27, 20); cout << "|                                                  |";
+    rlutil::locate(27, 21); cout << "|                                                  |";
+    rlutil::locate(27, 22); cout << "|                                                  |";
+    rlutil::locate(27, 23); cout << "|                                                  |";
+    rlutil::locate(27, 24); cout << "|                                                  |";
+    rlutil::locate(27, 25); cout << "|                                                  |";
+    rlutil::locate(27, 26); cout << "|                                                  |";
+    rlutil::locate(27, 27); cout << "====================================================";
 
     cout << endl << endl;
 
@@ -199,32 +168,44 @@ void MenuCliente::Dardebaja_Reactivarcliente() const
     clienteManager.gestionarEstadoCliente();
 }
 
-void MenuCliente::Listadeclientes() const
-{
-    system ("cls");
-    LogoConstante ();
+void MenuCliente::Listadeclientes() const {
+    system("cls");
+    LogoConstante();
 
     rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 19);
-    cout<< "ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออป";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 20);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::RED);
-    rlutil::locate(27, 21);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::WHITE);
-    rlutil::locate(27, 22);
-    cout<< "บ                                                          บ";
-    rlutil::setColor(rlutil::BLUE);
-    rlutil::locate(27, 23);
-    cout<< "ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ";
+    rlutil::locate(27, 19); cout << "==========================================================";
+    rlutil::locate(27, 20); cout << "|                                                        |";
+    rlutil::locate(27, 21); cout << "|                                                        |";
+    rlutil::locate(27, 22); cout << "|                                                        |";
+    rlutil::locate(27, 23); cout << "==========================================================";
+
     rlutil::setColor(rlutil::YELLOW);
     rlutil::locate(29, 21);
-    cout<<"E s t a s  e n:  L i s t a d o  D e  C l i e n t e s";
+    cout << "L i s t a d o  D e  C l i e n t e s";
 
     cout << endl << endl;
 
     ClientesManager clienteManager;
     clienteManager.listarClientes();
+}
+
+void MenuCliente::BuscarClientePorID() const {
+    system("cls");
+    LogoConstante();
+
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(27, 19); cout << "==========================================================";
+    rlutil::locate(27, 20); cout << "|                                                        |";
+    rlutil::locate(27, 21); cout << "|                                                        |";
+    rlutil::locate(27, 22); cout << "|                                                        |";
+    rlutil::locate(27, 23); cout << "==========================================================";
+
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(29, 21);
+    cout << "B u s c a r  C l i e n t e  P o r  I D";
+
+    cout << endl << endl;
+
+    ClientesManager clienteManager;
+    clienteManager.buscarClientePorID();
 }

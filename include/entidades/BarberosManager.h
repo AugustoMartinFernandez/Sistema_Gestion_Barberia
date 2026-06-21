@@ -7,4 +7,5 @@ public:
     void gestionarEstadoBarbero() const;
     void listarBarberos() const;
     void listarBarberosResumido() const;
+    void buscarBarberoPorID() const;
 };

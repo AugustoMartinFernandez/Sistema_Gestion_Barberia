@@ -12,6 +12,8 @@ using namespace std;
 #include "Barbero.h"
 #include "facha.h"
 #include "Fecha.h"
+#include "ArchivoServicios.h"
+
 
 void InformesManager::informeClientesFrecuentes() const {
     system("cls");
@@ -421,3 +423,178 @@ void InformesManager::recaudacionPorAnio() const
 
     system("pause");
 }
+
+
+void InformesManager::InformeServMasSolicitados ()const{
+  system("cls");
+  // LogoConstante ();
+    rlutil::setColor(rlutil::YELLOW);
+    cout << "--- SERVICIOS MAS SOLICITADOS ---" << endl << endl;
+    rlutil::setColor(rlutil::WHITE);
+
+ ArchivoServicios archServicios;
+    ArchivoTurnos archTurnos;
+    ArchivoPagos archPagos;
+
+int totalServicios = archServicios.cantidadRegistros();
+
+    if (totalServicios == 0) {
+    cout << "No hay servicios registrados en el sistema." << endl;
+     system ("pause");
+     return;
+
+     }
+     //aarreglo dinamico con un stuct x cada serv
+ conteoServicios *vectServicios = new conteoServicios [totalServicios];
+
+    //inicializar: asignar id y cantidad 0
+    for (int i=0; i< totalServicios; i++){
+        Servicio ser = archServicios.leer (i);
+        vectServicios[i].idServicio = ser.getId ();
+        vectServicios [i].cantidad = 0;
+    }
+// recorremos con el for , turnos act, q esten pagados
+
+int totalTurnos = archTurnos.cantidadRegistros ();
+      for ( int i=0; i<totalTurnos; i++){
+        Turno turnoActual = archTurnos.leer (i);
+        //  if que verifica si el turno actual esta ON
+        if  (turnoActual.getActivo ()){
+            int posPago = archPagos.buscarPorTurno (turnoActual.getId());
+
+           if ( posPago != -1) {
+            // servicio realizado.
+            int idServ = turnoActual.getIdServicio();
+            int posServ = archServicios.buscar (idServ);
+
+            if (posServ != -1 ){
+                vectServicios [posServ].cantidad++;
+               }
+        }
+        }
+      }
+
+    //ordenar de mayor a menor cant
+
+for (int i=0; i<totalServicios -1; i++) {
+        int posMax = i;
+      for (int j =i+1; j<totalServicios; j++){
+
+    if (vectServicios [j].cantidad >vectServicios[posMax].cantidad)
+        posMax = j;
+      }
+    conteoServicios aux = vectServicios [i];
+    vectServicios [i] = vectServicios [posMax];
+    vectServicios [posMax] = aux;
+    }
+// mostrar rankiing ( todos o  > 0 )
+
+bool haydatos = false;
+cout<< "Ranking de Servicios (por cantidad de turnos realizados):"<<endl<<endl;
+ for (int i=0; i <totalServicios; i++) {
+
+    if (vectServicios[i].cantidad >0) {
+        haydatos = true;
+        Servicio vicio = archServicios.leer(archServicios.buscar(vectServicios[i].idServicio));
+     cout << i + 1 << " . "<< vicio.getDescripcion ()
+     << " - "<< vectServicios [i].cantidad << " Turnos."<<endl;
+    }
+ }
+if (haydatos == false) {
+    cout << "Por el momento no hay servicios con turnos Realizados."<<endl;
+
+}
+
+ delete[] vectServicios;
+ system ("pause");
+ }
+void InformesManager::InformeVentPorServicio ()const{
+      system("cls");
+    rlutil::setColor(rlutil::YELLOW);
+    cout << "--- VENTAS POR SERVICIO ---" << endl << endl;
+    rlutil::setColor(rlutil::WHITE);
+
+ ArchivoServicios archServ;
+    ArchivoTurnos archTurn;
+    ArchivoPagos archPag;
+
+ int totalServicios = archServ.cantidadRegistros();
+ if (totalServicios == 0 ) {
+    cout << "No hay servicios registrados."<<endl;
+    system ("pause");
+    return;
+ }
+ // array dinamico = acumula montos
+ventasServicio *vectVentas = new ventasServicio[totalServicios];
+
+//inicializar
+for ( int i =0; i< totalServicios; i++) {
+    Servicio ser = archServ.leer (i);
+    vectVentas [i].idServicio = ser.getId();
+    vectVentas [i].totalfact =0.0f;
+}
+ // recoremos todos los pagos activos.
+int totalpagos = archPag.cantidadRegistros ();
+
+ for  (int i=0; i<totalpagos; i++) {
+    Pago PagAct = archPag.leer (i);
+    if (PagAct.getActivo()){
+           // obtener el turno relacionado a este pago
+         int posTurno = archTurn.buscar (PagAct.getIdTurno());
+
+         // El int no es -1, significa que es 0 o mayor.
+         if (posTurno != -1) {
+            Turno turn  = archTurn.leer (posTurno);
+            int idServ= turn.getIdServicio ();
+            int posServ= archServ.buscar (idServ);
+
+            if (posServ != -1) {
+                vectVentas [posServ].totalfact +=PagAct.getMonto ();
+            }
+         }
+    }
+ }
+
+ // ordenamiento de mayor a menor fact.
+
+for (int i=0; i < totalServicios -1; i++) {
+    int posMax = i;
+
+       for (int j = i +1; j< totalServicios; j++){
+
+            if (vectVentas[j].totalfact > vectVentas[posMax].totalfact)
+                   posMax = j;
+            }
+            ventasServicio aux = vectVentas [i];
+            vectVentas [i] = vectVentas [posMax];
+            vectVentas [posMax] = aux;
+       }
+   // resultados
+bool haydatos = false;
+cout<< "Ingresos generados por cada Servicio: "<<endl<<endl;
+
+for (int i=0; i<totalServicios; i++) {
+
+    if (vectVentas [i].totalfact > 0.0f) {
+        haydatos = true;
+        Servicio ser = archServ.leer (archServ.buscar(vectVentas[i].idServicio));
+        cout << i + 1 << " . "<<ser.getDescripcion () <<" - $"<< vectVentas [i].totalfact<<endl;
+
+    }
+}
+ if ( haydatos == false) {
+    cout << "No hay pagos registrados para calcular ventas por servicio."<<endl;
+
+ }
+
+ delete [] vectVentas;
+ system ("pause") ;
+
+}
+
+
+
+
+
+
+

@@ -13,6 +13,7 @@ public:
    void  EditarTurno()const;
    void  BorrarTurno ()const;
    void  ListarTurnos ()const;
+   void  ListarTurnosPorEstado ()const;
 
 
 };

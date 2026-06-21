@@ -284,3 +284,41 @@ void BarberosManager::listarBarberosResumido() const{
         }
     }
 }
+
+void BarberosManager::buscarBarberoPorID() const {
+
+    int idBuscado;
+
+    cout << "Ingrese ID del barbero: ";
+    cin >> idBuscado;
+
+    while(idBuscado <= 0) {
+        cout << "ID invalido. Intente nuevamente: ";
+        cin >> idBuscado;
+    }
+
+    BarberoArchivo archivo("barberos.dat");
+
+    int cantidad = archivo.cantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++) {
+
+        Barbero barbero = archivo.leer(i);
+
+        if(barbero.getId() == idBuscado && barbero.getActivo()) {
+
+            cout << "\nBarbero encontrado:\n" << endl;
+
+            barbero.mostrar();
+
+            cout << endl;
+            system("pause");
+            return;
+        }
+    }
+
+    cout << "\nNo se encontro un barbero activo con ese ID." << endl;
+    cout << endl;
+
+    system("pause");
+}
