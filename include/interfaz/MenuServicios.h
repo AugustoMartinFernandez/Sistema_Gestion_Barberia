@@ -9,4 +9,5 @@ public:
     void GestionarEstado() const;
     void ListarServicios() const;
     void BuscarServicioPorID() const;
+    void ConsultarPorRango() const;
 };

@@ -44,6 +44,9 @@ void MenuServicios::InterfazMenuServicios() const {
         rlutil::locate(32, 24);
         cout << "5- Buscar Servicio por ID";
 
+        rlutil::locate(32, 24);
+        cout << "6- Consultar por Rango de Precios";
+
         rlutil::locate(32, 26);
         cout << "0- Volver al Menu Principal";
 
@@ -74,6 +77,10 @@ void MenuServicios::InterfazMenuServicios() const {
 
         case 5:
             BuscarServicioPorID();
+            break;
+
+        case 6:
+            ConsultarPorRango();
             break;
 
         case 0:
@@ -205,4 +212,17 @@ void MenuServicios::BuscarServicioPorID() const {
 
     ServiciosManager manager;
     manager.buscarServicioPorID();
+}
+void MenuServicios::ConsultarPorRango() const {
+    system("cls");
+    LogoConstante();
+
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(29, 21);
+    cout << "S e r v i c i o s  P o r  R a n g o  D e  P r e c i o s";
+
+    cout << endl << endl;
+
+    ServiciosManager manager;
+    manager.consultarPorRangoDePrecios();
 }

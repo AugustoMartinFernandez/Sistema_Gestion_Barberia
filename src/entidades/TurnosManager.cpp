@@ -14,6 +14,47 @@ using namespace std;
 #include "BarberosManager.h"
 #include <cstring>
 
+bool TurnosManager::entidadesValidasYActivas(int idCliente, int idBarbero, int idServicio){
+    ArchivoClientes arcCli;
+    BarberoArchivo arcBar("barberos.dat");
+    ArchivoServicios arcSer;
+
+    // Cliente
+    int posCli = arcCli.buscar(idCliente);
+    if(posCli == -1){
+        cout << "El cliente no existe" << endl;
+        return false;
+    }
+    if(arcCli.leer(posCli).getActivo() == false){
+        cout << "El cliente existe pero esta dado de baja." <<endl;
+        return false;
+    }
+
+    // Barbero
+    int posbar = arcBar.buscar(idBarbero);
+    if(posbar == -1){
+        cout << "El Barbero no existe" <<endl;
+        return false;
+    }
+
+    if(arcBar.leer(posbar).getActivo() == false){
+        cout << "El Barbero existe pero esta dado de baja." <<endl;
+        return false;
+    }
+
+    // Servicio
+    int posSer = arcSer.buscar(idServicio);
+    if(posSer == -1){
+        cout << "El Servicio no existe." <<endl;
+        return false;
+    }
+    if(arcSer.leer(posSer).getActivo() == false){
+        cout << "El Servicio existe pero esta dado de baja." <<endl;
+        return false;
+    }
+    return true; // Si los tres existen y estan activos
+}
+
 void TurnosManager::crearTurno(){
 
     Turno turno;
@@ -63,18 +104,11 @@ void TurnosManager::crearTurno(){
     BarberoArchivo arcBar("barberos.dat");
     ArchivoServicios arcSer;
 
-    if (arcCli.buscar(turno.getIdCliente()) == -1) {
-        cout << "\n[ERROR] El ID de Cliente ingresado no existe." << endl;
-        system("pause"); return;
+    if(!entidadesValidasYActivas(turno.getIdCliente(), turno.getIdBarbero(), turno.getIdServicio())){
+        system("pause");
+        return;
     }
-    if (arcBar.buscar(turno.getIdBarbero()) == -1) {
-        cout << "\n[ERROR] El ID de Barbero ingresado no existe." << endl;
-        system("pause"); return;
-    }
-    if (arcSer.buscar(turno.getIdServicio()) == -1) {
-        cout << "\n[ERROR] El ID de Servicio ingresado no existe." << endl;
-        system("pause"); return;
-    }
+
     cout << endl;
     cout << "Desea guardar el turno?" << endl;
     cout << "1 - Si" << endl;
@@ -197,6 +231,11 @@ void TurnosManager::editarTurno(){
     turno.cargar();
     turno.setId(idOriginal);
     turno.setActivo(true);
+
+    if(!entidadesValidasYActivas(turno.getIdCliente(), turno.getIdBarbero(), turno.getIdServicio())){
+        system("pause");
+    return;
+    }
 
     if(archivo.guardar(turno, pos)){
         cout << "Turno modificado correctamente." << endl;

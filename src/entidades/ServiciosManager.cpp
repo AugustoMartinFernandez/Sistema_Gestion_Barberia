@@ -303,3 +303,39 @@ void ServiciosManager::buscarServicioPorID() const {
 
     system("pause");
 }
+void ServiciosManager::consultarPorRangoDePrecios()const{
+    float precioMin, precioMax;
+
+    cout << "Ingrese el precio minimo: ";
+    cin >> precioMin;
+    cout << "Ingrese el precio maximo: ";
+    cin >> precioMax;
+
+    // por si el usuario ingrese al reves acomodamos los datos
+    if(precioMin > precioMax){
+        float aux = precioMin;
+        precioMin = precioMax;
+        precioMax = aux;
+    }
+
+    ArchivoServicios archivo;
+    int total = archivo.cantidadRegistros();
+    bool hayResultados = false;
+
+    cout << "--- SERVICIOS ENTRE $" <<precioMin << " Y $"<<precioMax << " ---"<<endl;
+    for(int i=0; i < total; i++){
+        Servicio Servicio = archivo.leer(i);
+
+        if(Servicio.getActivo() && Servicio.getPrecio() >= precioMin && Servicio.getPrecio() <= precioMax){
+            cout <<endl;
+            Servicio.mostrar();
+            hayResultados = true;
+        }
+    }
+
+    if(!hayResultados){
+        cout << "No hay servicios activos en ese rango de precios." <<endl;
+    }
+    cout << endl;
+    system("pause");
+}
