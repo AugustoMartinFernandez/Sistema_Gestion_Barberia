@@ -34,4 +34,6 @@ public:
 
     void InformeServMasSolicitados ()const;
     void InformeVentPorServicio ()const;
+
+    void informeTurnosPorBarbero() const;
 };
